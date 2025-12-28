@@ -2,11 +2,9 @@
 <html lang="uz">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
     <title>Mohina Pardalari - Zebo va Zamonaviy Pardalar</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
     <style>
         * {
             margin: 0;
@@ -30,15 +28,21 @@
             background-color: #fafafa;
             color: var(--text-color);
             line-height: 1.6;
+            overflow-x: hidden;
+            width: 100%;
+            min-height: 100vh;
         }
 
         .container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 0 20px;
+            padding: 0 15px;
+            width: 100%;
         }
 
-        /* Header Styles */
+        /* ===== MOBIL UCHUN ASOSIY TUZATISHLAR ===== */
+
+        /* Header Styles - MOBIL UCHUN */
         .header {
             background: linear-gradient(135deg, var(--dark-color), var(--primary-color));
             color: white;
@@ -46,10 +50,12 @@
             top: 0;
             z-index: 1000;
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            width: 100%;
+            overflow: visible;
         }
 
         .header-top {
-            padding: 15px 0;
+            padding: 12px 0;
             border-bottom: 1px solid rgba(255, 255, 255, 0.1);
         }
 
@@ -57,59 +63,75 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
+            flex-wrap: wrap;
+            gap: 10px;
         }
 
         .logo {
             display: flex;
             align-items: center;
-            gap: 15px;
+            gap: 10px;
             text-decoration: none;
             color: white;
+            flex: 1;
+            min-width: 0;
         }
 
         .logo-icon {
-            font-size: 36px;
+            font-size: 28px;
             color: #ffeb3b;
+            flex-shrink: 0;
         }
 
         .logo-text h1 {
-            font-size: 28px;
-            font-weight: 800;
-            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+            font-size: clamp(16px, 4vw, 24px);
+            font-weight: 700;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+            line-height: 1.2;
+            word-break: break-word;
         }
 
         .logo-text p {
-            font-size: 13px;
+            font-size: clamp(10px, 2.5vw, 12px);
             opacity: 0.9;
+            line-height: 1.3;
         }
 
         .header-contact {
             display: flex;
             align-items: center;
-            gap: 25px;
+            flex-wrap: wrap;
+            gap: 10px;
+            flex: 1;
+            justify-content: flex-end;
+            min-width: 0;
         }
 
         .contact-item {
             display: flex;
             align-items: center;
-            gap: 8px;
-            font-size: 15px;
+            gap: 6px;
+            font-size: clamp(12px, 3vw, 14px);
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
         }
 
         .contact-item i {
             color: #ffeb3b;
-            font-size: 18px;
+            font-size: clamp(14px, 3.5vw, 16px);
+            flex-shrink: 0;
         }
 
         .social-links {
             display: flex;
-            gap: 12px;
-            margin-left: 20px;
+            gap: 8px;
+            margin-left: 10px;
         }
 
         .social-link {
-            width: 36px;
-            height: 36px;
+            width: clamp(30px, 8vw, 36px);
+            height: clamp(30px, 8vw, 36px);
             background-color: rgba(255, 255, 255, 0.1);
             border-radius: 50%;
             display: flex;
@@ -118,17 +140,18 @@
             color: white;
             text-decoration: none;
             transition: var(--transition);
+            flex-shrink: 0;
         }
 
-        .social-link:hover {
-            background-color: #ffeb3b;
-            color: var(--dark-color);
-            transform: translateY(-3px);
+        .social-link i {
+            font-size: clamp(14px, 3.5vw, 16px);
         }
 
-        /* Navigation */
+        /* Navigation - MOBIL UCHUN */
         .nav {
             background-color: rgba(0, 0, 0, 0.15);
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
         }
 
         .nav .container {
@@ -136,91 +159,93 @@
             justify-content: space-between;
             align-items: center;
             padding: 0;
+            min-width: max-content;
         }
 
         .nav-links {
             display: flex;
             list-style: none;
+            padding: 0;
+            margin: 0;
+            min-width: max-content;
         }
 
         .nav-links a {
             color: white;
             text-decoration: none;
-            padding: 18px 25px;
+            padding: 12px 15px;
             font-weight: 600;
             display: flex;
             align-items: center;
-            gap: 8px;
+            gap: 6px;
             transition: var(--transition);
             position: relative;
+            font-size: clamp(12px, 3vw, 14px);
+            white-space: nowrap;
         }
 
-        .nav-links a:hover {
-            background-color: rgba(255, 255, 255, 0.1);
-        }
-
-        .nav-links a.active {
-            background-color: rgba(255, 255, 255, 0.15);
-        }
-
-        .nav-links a.active::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            height: 3px;
-            background-color: #ffeb3b;
+        .nav-links a i {
+            font-size: clamp(14px, 3.5vw, 16px);
         }
 
         .search-box {
             position: relative;
-            margin-right: 20px;
+            margin: 0 15px;
+            min-width: 150px;
+            flex-shrink: 1;
         }
 
         .search-box input {
-            padding: 10px 15px 10px 40px;
+            padding: 8px 15px 8px 35px;
             border: none;
-            border-radius: 30px;
-            width: 250px;
+            border-radius: 20px;
+            width: 100%;
             background-color: rgba(255, 255, 255, 0.9);
             font-size: 14px;
+            max-width: 250px;
         }
 
         .search-box i {
             position: absolute;
-            left: 15px;
+            left: 12px;
             top: 50%;
             transform: translateY(-50%);
             color: var(--dark-color);
+            font-size: 14px;
         }
 
-        /* Hero Banner */
+        /* Hero Banner - MOBIL UCHUN */
         .hero-banner {
             background: linear-gradient(rgba(106, 27, 154, 0.9), rgba(156, 39, 176, 0.9)), url('https://images.unsplash.com/photo-1583847268964-b28dc8f51f92?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80');
             background-size: cover;
             background-position: center;
             color: white;
-            padding: 100px 0;
+            padding: clamp(40px, 10vw, 80px) 0;
             text-align: center;
-            margin-bottom: 60px;
+            margin-bottom: clamp(30px, 5vw, 60px);
+            width: 100%;
         }
 
         .hero-content {
             max-width: 800px;
             margin: 0 auto;
+            padding: 0 10px;
         }
 
         .hero-content h2 {
-            font-size: 46px;
-            margin-bottom: 20px;
-            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+            font-size: clamp(24px, 6vw, 40px);
+            margin-bottom: 15px;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+            line-height: 1.3;
+            padding: 0 5px;
         }
 
         .hero-content p {
-            font-size: 20px;
-            margin-bottom: 30px;
+            font-size: clamp(14px, 3.5vw, 18px);
+            margin-bottom: 25px;
             opacity: 0.95;
+            line-height: 1.5;
+            padding: 0 5px;
         }
 
         .highlight {
@@ -228,67 +253,59 @@
             font-weight: 700;
         }
 
-        /* Call to Action */
+        /* Call to Action - MOBIL UCHUN */
         .cta-box {
             display: flex;
-            gap: 30px;
-            justify-content: center;
-            margin-top: 40px;
+            flex-direction: column;
+            gap: 15px;
+            align-items: center;
+            margin-top: 30px;
+            width: 100%;
+            padding: 0 5px;
         }
 
         .btn {
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            gap: 10px;
+            gap: 8px;
             background-color: #ffeb3b;
             color: var(--dark-color);
             border: none;
-            padding: 16px 35px;
+            padding: 12px 20px;
             border-radius: 8px;
-            font-size: 16px;
-            font-weight: 700;
+            font-size: clamp(14px, 3.5vw, 16px);
+            font-weight: 600;
             cursor: pointer;
             transition: var(--transition);
             text-decoration: none;
             text-transform: uppercase;
             letter-spacing: 0.5px;
+            width: 100%;
+            max-width: 300px;
         }
 
-        .btn:hover {
-            background-color: white;
-            transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        .btn-whatsapp, .btn-telegram, .btn-instagram {
+            width: 100%;
+            max-width: 300px;
         }
 
-        .btn-whatsapp {
-            background-color: #25d366;
-            color: white;
-        }
-
-        .btn-telegram {
-            background-color: #0088cc;
-            color: white;
-        }
-
-        .btn-instagram {
-            background: linear-gradient(45deg, #405de6, #5851db, #833ab4, #c13584, #e1306c, #fd1d1d);
-            color: white;
-        }
-
-        /* Categories */
+        /* Categories - MOBIL UCHUN */
         .categories-section {
-            padding: 40px 0 60px;
+            padding: clamp(30px, 5vw, 50px) 0;
             background-color: white;
+            width: 100%;
         }
 
         .section-title {
-            font-size: 36px;
+            font-size: clamp(24px, 6vw, 32px);
             color: var(--dark-color);
-            margin-bottom: 40px;
+            margin-bottom: 25px;
             text-align: center;
             position: relative;
-            padding-bottom: 15px;
+            padding-bottom: 12px;
+            line-height: 1.3;
+            padding: 0 10px;
         }
 
         .section-title::after {
@@ -297,7 +314,7 @@
             bottom: 0;
             left: 50%;
             transform: translateX(-50%);
-            width: 120px;
+            width: 80px;
             height: 4px;
             background-color: var(--accent-color);
             border-radius: 2px;
@@ -307,110 +324,99 @@
             text-align: center;
             color: #666;
             max-width: 700px;
-            margin: 0 auto 50px;
-            font-size: 18px;
+            margin: 0 auto 40px;
+            font-size: clamp(14px, 3.5vw, 16px);
+            line-height: 1.5;
+            padding: 0 15px;
         }
 
         .categories-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-            gap: 25px;
-            margin-bottom: 60px;
+            gap: 20px;
+            margin-bottom: 40px;
+            width: 100%;
         }
 
         .category-card {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            text-align: center;
+            padding: 20px 15px;
+            border: 2px solid transparent;
+        }
+
+        .category-icon {
+            font-size: 40px;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+
+        .category-card h3 {
+            font-size: clamp(16px, 4vw, 20px);
+            color: var(--dark-color);
+            margin-bottom: 8px;
+            line-height: 1.3;
+        }
+
+        .category-card p {
+            color: #666;
+            font-size: clamp(12px, 3vw, 14px);
+            line-height: 1.4;
+        }
+
+        /* Products Section - MOBIL UCHUN */
+        .products-section {
+            padding: clamp(40px, 5vw, 60px) 0;
+            background-color: #f9f9f9;
+            width: 100%;
+        }
+
+        .category-filter {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 30px;
+            justify-content: center;
+            padding: 0 5px;
+        }
+
+        .category-btn {
+            padding: 10px 20px;
+            background-color: white;
+            border: 2px solid var(--secondary-color);
+            border-radius: 25px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            color: var(--dark-color);
+            font-size: clamp(12px, 3vw, 14px);
+            white-space: nowrap;
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 25px;
+            margin-bottom: 40px;
+            width: 100%;
+        }
+
+        .product-card {
             background-color: white;
             border-radius: 12px;
             overflow: hidden;
             box-shadow: var(--shadow);
             transition: var(--transition);
-            text-align: center;
-            padding: 25px 20px;
-            border: 2px solid transparent;
-        }
-
-        .category-card:hover {
-            transform: translateY(-10px);
-            border-color: var(--primary-color);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
-        }
-
-        .category-icon {
-            font-size: 50px;
-            color: var(--primary-color);
-            margin-bottom: 20px;
-        }
-
-        .category-card h3 {
-            font-size: 22px;
-            color: var(--dark-color);
-            margin-bottom: 10px;
-        }
-
-        .category-card p {
-            color: #666;
-            font-size: 14px;
-        }
-
-        /* Products Section */
-        .products-section {
-            padding: 60px 0;
-            background-color: #f9f9f9;
-        }
-
-        .category-filter {
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-            margin-bottom: 40px;
-            flex-wrap: wrap;
-        }
-
-        .category-btn {
-            padding: 12px 30px;
-            background-color: white;
-            border: 2px solid var(--secondary-color);
-            border-radius: 30px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: var(--transition);
-            color: var(--dark-color);
-        }
-
-        .category-btn.active {
-            background-color: var(--primary-color);
-            color: white;
-            border-color: var(--primary-color);
-        }
-
-        .category-btn:hover:not(.active) {
-            border-color: var(--primary-color);
-            color: var(--primary-color);
-        }
-
-        .products-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-            gap: 35px;
-            margin-bottom: 60px;
-        }
-
-        .product-card {
-            background-color: white;
-            border-radius: 15px;
-            overflow: hidden;
-            box-shadow: var(--shadow);
-            transition: var(--transition);
             border: 1px solid #eee;
-        }
-
-        .product-card:hover {
-            transform: translateY(-12px);
-            box-shadow: 0 20px 35px rgba(0, 0, 0, 0.15);
+            max-width: 100%;
         }
 
         .product-image {
-            height: 250px;
+            height: 200px;
             position: relative;
             overflow: hidden;
         }
@@ -418,6 +424,7 @@
         .product-img-slider {
             height: 100%;
             position: relative;
+            width: 100%;
         }
 
         .product-img {
@@ -425,6 +432,7 @@
             height: 100%;
             object-fit: cover;
             transition: opacity 0.5s ease;
+            display: block;
         }
 
         .img-nav {
@@ -434,104 +442,105 @@
             background-color: rgba(0, 0, 0, 0.6);
             color: white;
             border: none;
-            width: 40px;
-            height: 40px;
+            width: 35px;
+            height: 35px;
             border-radius: 50%;
             cursor: pointer;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 18px;
+            font-size: 16px;
             transition: var(--transition);
-            opacity: 0;
+            opacity: 0.7;
         }
 
         .product-card:hover .img-nav {
             opacity: 1;
         }
 
-        .img-nav:hover {
-            background-color: rgba(0, 0, 0, 0.9);
-        }
-
         .img-prev {
-            left: 15px;
+            left: 10px;
         }
 
         .img-next {
-            right: 15px;
+            right: 10px;
         }
 
         .product-badge {
             position: absolute;
-            top: 15px;
-            right: 15px;
+            top: 10px;
+            right: 10px;
             background-color: var(--accent-color);
             color: white;
-            padding: 6px 15px;
-            border-radius: 20px;
-            font-size: 12px;
+            padding: 5px 10px;
+            border-radius: 15px;
+            font-size: 11px;
             font-weight: 700;
             z-index: 2;
+            max-width: 80%;
+            word-break: break-word;
         }
 
         .product-info {
-            padding: 25px;
+            padding: 20px;
         }
 
         .product-title {
-            font-size: 22px;
+            font-size: clamp(16px, 4vw, 18px);
             font-weight: 700;
             color: var(--dark-color);
-            margin-bottom: 10px;
-            min-height: 56px;
+            margin-bottom: 8px;
+            line-height: 1.3;
+            min-height: auto;
         }
 
         .product-price {
-            font-size: 28px;
+            font-size: clamp(18px, 4.5vw, 22px);
             font-weight: 800;
             color: var(--primary-color);
-            margin-bottom: 15px;
+            margin-bottom: 12px;
         }
 
         .product-price .old-price {
-            font-size: 20px;
+            font-size: clamp(14px, 3.5vw, 16px);
             color: #999;
             text-decoration: line-through;
-            margin-right: 10px;
+            margin-right: 8px;
         }
 
         .product-description {
             color: #666;
-            margin-bottom: 20px;
-            font-size: 15px;
+            margin-bottom: 15px;
+            font-size: clamp(13px, 3.2vw, 14px);
             line-height: 1.5;
-            min-height: 70px;
+            min-height: auto;
         }
 
         .product-features {
             display: flex;
             flex-wrap: wrap;
-            gap: 10px;
-            margin-bottom: 25px;
+            gap: 8px;
+            margin-bottom: 20px;
         }
 
         .feature-tag {
             background-color: var(--light-color);
-            padding: 6px 14px;
-            border-radius: 20px;
-            font-size: 13px;
+            padding: 5px 10px;
+            border-radius: 15px;
+            font-size: 11px;
             color: var(--dark-color);
         }
 
         .product-actions {
             display: flex;
-            gap: 12px;
+            flex-direction: column;
+            gap: 10px;
+            width: 100%;
         }
 
         .action-btn {
             flex: 1;
-            padding: 14px;
+            padding: 12px;
             border-radius: 8px;
             font-weight: 600;
             cursor: pointer;
@@ -541,101 +550,87 @@
             justify-content: center;
             gap: 8px;
             border: 2px solid transparent;
+            font-size: clamp(13px, 3.2vw, 14px);
+            width: 100%;
         }
 
-        .action-call {
-            background-color: var(--primary-color);
-            color: white;
-        }
-
-        .action-call:hover {
-            background-color: var(--dark-color);
-            transform: translateY(-3px);
-        }
-
-        .action-whatsapp {
-            background-color: #25d366;
-            color: white;
-        }
-
-        .action-whatsapp:hover {
-            background-color: #1da851;
-            transform: translateY(-3px);
-        }
-
-        /* Contact Section */
+        /* Contact Section - MOBIL UCHUN */
         .contact-section {
-            padding: 80px 0;
+            padding: clamp(40px, 8vw, 60px) 0;
             background-color: white;
             text-align: center;
+            width: 100%;
         }
 
         .contact-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 40px;
-            margin-top: 50px;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin-top: 40px;
+            width: 100%;
         }
 
         .contact-card {
             background-color: var(--light-color);
-            padding: 40px 30px;
-            border-radius: 15px;
+            padding: 25px 20px;
+            border-radius: 12px;
             transition: var(--transition);
-        }
-
-        .contact-card:hover {
-            transform: translateY(-10px);
-            box-shadow: var(--shadow);
+            width: 100%;
         }
 
         .contact-icon {
-            font-size: 50px;
+            font-size: 40px;
             color: var(--primary-color);
-            margin-bottom: 25px;
+            margin-bottom: 20px;
         }
 
         .contact-card h3 {
-            font-size: 24px;
+            font-size: clamp(18px, 4.5vw, 20px);
             color: var(--dark-color);
-            margin-bottom: 15px;
+            margin-bottom: 12px;
+            line-height: 1.3;
         }
 
         .contact-card p {
             color: #666;
-            margin-bottom: 20px;
-            font-size: 16px;
+            margin-bottom: 15px;
+            font-size: clamp(13px, 3.2vw, 14px);
+            line-height: 1.5;
         }
 
         .contact-card a {
             color: var(--primary-color);
             text-decoration: none;
             font-weight: 600;
-            font-size: 18px;
+            font-size: clamp(14px, 3.5vw, 16px);
             display: block;
-            margin-top: 15px;
+            margin-top: 10px;
+            word-break: break-all;
         }
 
-        /* Footer */
+        /* Footer - MOBIL UCHUN */
         .footer {
             background: linear-gradient(135deg, var(--dark-color), #4a148c);
             color: white;
-            padding: 60px 0 30px;
+            padding: clamp(40px, 8vw, 60px) 0 30px;
+            width: 100%;
         }
 
         .footer-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 40px;
-            margin-bottom: 40px;
+            gap: 30px;
+            margin-bottom: 30px;
+            width: 100%;
         }
 
         .footer-col h4 {
-            font-size: 22px;
-            margin-bottom: 25px;
+            font-size: clamp(18px, 4.5vw, 20px);
+            margin-bottom: 20px;
             color: #ffeb3b;
             position: relative;
             padding-bottom: 10px;
+            line-height: 1.3;
         }
 
         .footer-col h4::after {
@@ -650,10 +645,11 @@
 
         .footer-col ul {
             list-style: none;
+            padding: 0;
         }
 
         .footer-col ul li {
-            margin-bottom: 12px;
+            margin-bottom: 10px;
         }
 
         .footer-col ul li a {
@@ -662,109 +658,231 @@
             transition: var(--transition);
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 8px;
+            font-size: clamp(13px, 3.2vw, 14px);
+            line-height: 1.4;
+            word-break: break-word;
         }
 
-        .footer-col ul li a:hover {
-            color: #ffeb3b;
-            transform: translateX(5px);
+        .footer-col ul li a i {
+            flex-shrink: 0;
         }
 
         .footer-bottom {
             text-align: center;
-            padding-top: 30px;
+            padding-top: 25px;
             border-top: 1px solid rgba(255, 255, 255, 0.1);
             color: #bbb;
-            font-size: 14px;
+            font-size: clamp(12px, 3vw, 13px);
+            line-height: 1.5;
+            width: 100%;
         }
 
         .footer-social {
             display: flex;
             justify-content: center;
-            gap: 15px;
-            margin-top: 30px;
+            gap: 12px;
+            margin-top: 20px;
         }
 
-        /* Responsive */
-        @media (max-width: 992px) {
+        /* ===== KOMPYUTER UCHUN QO'SHIMCHA STILLAR ===== */
+        @media (min-width: 769px) {
+            .header-top .container {
+                flex-wrap: nowrap;
+            }
+            
+            .logo-text h1 {
+                font-size: 28px;
+            }
+            
+            .logo-text p {
+                font-size: 13px;
+            }
+            
+            .contact-item {
+                font-size: 15px;
+            }
+            
+            .nav-links a {
+                padding: 18px 25px;
+                font-size: 16px;
+            }
+            
+            .hero-content h2 {
+                font-size: 46px;
+            }
+            
+            .hero-content p {
+                font-size: 20px;
+            }
+            
+            .cta-box {
+                flex-direction: row;
+                justify-content: center;
+            }
+            
+            .btn {
+                width: auto;
+                padding: 16px 35px;
+            }
+            
+            .section-title {
+                font-size: 36px;
+            }
+            
+            .section-subtitle {
+                font-size: 18px;
+            }
+            
+            .category-card {
+                padding: 25px 20px;
+            }
+            
+            .category-icon {
+                font-size: 50px;
+            }
+            
+            .category-card h3 {
+                font-size: 22px;
+            }
+            
+            .products-grid {
+                grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+                gap: 35px;
+            }
+            
+            .product-image {
+                height: 250px;
+            }
+            
+            .product-title {
+                font-size: 22px;
+            }
+            
+            .product-price {
+                font-size: 28px;
+            }
+            
+            .product-actions {
+                flex-direction: row;
+            }
+            
+            .action-btn {
+                font-size: 16px;
+                padding: 14px;
+            }
+            
+            .contact-grid {
+                gap: 40px;
+            }
+            
+            .contact-card {
+                padding: 40px 30px;
+            }
+            
+            .contact-icon {
+                font-size: 50px;
+            }
+        }
+
+        /* ===== KICHIK MOBIL EKRANLAR UCHUN ===== */
+        @media (max-width: 480px) {
             .header-top .container {
                 flex-direction: column;
+                align-items: flex-start;
                 gap: 15px;
             }
             
+            .header-contact {
+                width: 100%;
+                justify-content: flex-start;
+            }
+            
+            .logo {
+                width: 100%;
+            }
+            
+            .nav .container {
+                flex-direction: column;
+                padding: 10px 0;
+            }
+            
             .nav-links {
+                width: 100%;
+                justify-content: center;
+            }
+            
+            .search-box {
+                width: 100%;
+                margin: 10px 0;
+                max-width: 100%;
+            }
+            
+            .search-box input {
+                max-width: 100%;
+            }
+            
+            .categories-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .products-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .category-filter {
+                justify-content: flex-start;
                 overflow-x: auto;
                 padding-bottom: 10px;
             }
             
-            .search-box input {
-                width: 200px;
+            .category-btn {
+                flex-shrink: 0;
             }
             
-            .hero-content h2 {
-                font-size: 36px;
-            }
-            
-            .cta-box {
-                flex-direction: column;
-                align-items: center;
+            .footer-grid {
+                grid-template-columns: 1fr;
             }
         }
 
-        @media (max-width: 768px) {
-            .nav .container {
-                flex-direction: column;
-                padding: 15px 20px;
+        /* ===== ORALIQ EKRAN O'LCHAMLARI ===== */
+        @media (min-width: 481px) and (max-width: 768px) {
+            .categories-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .products-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .nav-links {
+                width: 100%;
+                justify-content: space-around;
             }
             
             .search-box {
                 width: 100%;
                 margin: 15px 0;
             }
-            
-            .search-box input {
-                width: 100%;
-            }
-            
-            .hero-content h2 {
-                font-size: 28px;
-            }
-            
-            .hero-content p {
-                font-size: 16px;
-            }
-            
-            .section-title {
-                font-size: 28px;
-            }
-            
-            .products-grid {
-                grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-            }
-            
-            .product-actions {
-                flex-direction: column;
-            }
         }
 
-        @media (max-width: 480px) {
-            .logo-text h1 {
-                font-size: 22px;
-            }
-            
-            .contact-item {
-                font-size: 13px;
-            }
-            
-            .nav-links a {
-                padding: 15px;
-                font-size: 14px;
-            }
-            
-            .category-btn {
-                padding: 10px 20px;
-                font-size: 14px;
-            }
+        /* ===== UMUMIY TANALAR ===== */
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        *:focus {
+            outline: 2px solid var(--accent-color);
+            outline-offset: 2px;
+        }
+        
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+        
+        button, a {
+            -webkit-tap-highlight-color: transparent;
         }
     </style>
 </head>
@@ -790,7 +908,7 @@
                     </div>
                     <div class="contact-item">
                         <i class="fas fa-map-marker-alt"></i>
-                        <span>Toshkent viloyati, Olmaliq Shahri</span>
+                        <span>Olmaliq Shahri</span>
                     </div>
                     
                     <div class="social-links">
@@ -815,7 +933,6 @@
                     <li><a href="#categories"><i class="fas fa-th-large"></i> Kategoriyalar</a></li>
                     <li><a href="#products"><i class="fas fa-store"></i> Pardalar</a></li>
                     <li><a href="#contact"><i class="fas fa-phone-alt"></i> Bog'lanish</a></li>
-                    <li><a href="#"><i class="fas fa-info-circle"></i> Biz Haqimizda</a></li>
                 </ul>
                 
                 <div class="search-box">
@@ -835,13 +952,13 @@
                 
                 <div class="cta-box">
                     <a href="tel:+9989504577730" class="btn">
-                        <i class="fas fa-phone"></i> Hoziroq Qo'ng'iroq Qiling
+                        <i class="fas fa-phone"></i> Qo'ng'iroq
                     </a>
                     <a href="https://t.me/moxina_designn" class="btn btn-telegram" target="_blank">
-                        <i class="fab fa-telegram"></i> Telegramda Sotib Olish
+                        <i class="fab fa-telegram"></i> Telegram
                     </a>
                     <a href="https://wa.me/9989504577730" class="btn btn-whatsapp" target="_blank">
-                        <i class="fab fa-whatsapp"></i> WhatsAppda Sotib Olish
+                        <i class="fab fa-whatsapp"></i> WhatsApp
                     </a>
                 </div>
             </div>
@@ -940,8 +1057,8 @@
                     </div>
                     <h3>Telefon Orqali</h3>
                     <p>Ish vaqtida (7:00 - 23:00) qo'ng'iroq qiling va maslahat oling</p>
-                    <a href="tel:+998901234567">+998 95 045 77 30</a>
-                    <a href="tel:+998901112233">+998 95 072 22 16</a>
+                    <a href="tel:+9989504577730">+998 95 045 77 30</a>
+                    <a href="tel:+998950722216">+998 95 072 22 16</a>
                 </div>
                 
                 <div class="contact-card">
@@ -950,8 +1067,7 @@
                     </div>
                     <h3>Telegram Orqali</h3>
                     <p>24/7 qo'llab-quvvatlash. Rasm yuboring, narx va maslahat oling</p>
-                    <a href="https://t.me/moxina_designn" target="_blank">@moxina.pardalari</a>
-                    <a href="https://t.me/mohina_admin" target="_blank">@mohina_admin</a>
+                    <a href="https://t.me/moxina_designn" target="_blank">@moxina_designn</a>
                 </div>
                 
                 <div class="contact-card">
@@ -960,8 +1076,7 @@
                     </div>
                     <h3>Instagram Orqali</h3>
                     <p>Bizning yangi pardalarimizni Instagramda ko'ring va buyurtma bering</p>
-                    <a href="https://instagram.com/moxina.pardalari" target="_blank">@mohina.pardalari</a>
-                    <a href="https://instagram.com/mohina_sotuv" target="_blank">@mohina_sotuv</a>
+                    <a href="https://instagram.com/moxina.pardalari" target="_blank">@moxina.pardalari</a>
                 </div>
             </div>
         </div>
@@ -973,19 +1088,16 @@
             <div class="footer-grid">
                 <div class="footer-col">
                     <h4>Mohina Pardalari</h4>
-                    <p>Olmaliqdagi eng yirik parda do'konlaridan biri. 15 yillik Professional parda dizayneri, 10000+ mijoz, sifat kafolati, O‘lchash •Tikish •O‘rnatish.</p>
+                    <p>Olmaliqdagi eng yirik parda do'konlaridan biri. 15 yillik Professional parda dizayneri, 10000+ mijoz, sifat kafolati, O'rnatish xizmati.</p>
                     <div class="footer-social">
                         <a href="https://t.me/moxina_designn" class="social-link" target="_blank">
                             <i class="fab fa-telegram"></i>
                         </a>
-                        <a href="https://instagram.com/mohina.pardalari" class="social-link" target="_blank">
+                        <a href="https://instagram.com/moxina.pardalari" class="social-link" target="_blank">
                             <i class="fab fa-instagram"></i>
                         </a>
-                        <a href="https://facebook.com/mohina_pardalari" class="social-link" target="_blank">
-                            <i class="fab fa-facebook"></i>
-                        </a>
-                        <a href="https://youtube.com/mohina_pardalari" class="social-link" target="_blank">
-                            <i class="fab fa-youtube"></i>
+                        <a href="https://wa.me/9989504577730" class="social-link" target="_blank">
+                            <i class="fab fa-whatsapp"></i>
                         </a>
                     </div>
                 </div>
@@ -1013,9 +1125,8 @@
                 <div class="footer-col">
                     <h4>Aloqa</h4>
                     <ul>
-                        <li><a href="#"><i class="fas fa-map-marker-alt"></i> Toshkent vil., Olmaliq shahri </a></li>
-                        <li><a href="tel:+9989504577730><i class="fas fa-phone"></i> +998 95 045 77 30</a></li>
-                        <li><a href="mailto:info@mohinaparda.uz"><i class="fas fa-envelope"></i> info@mohinaparda.uz</a></li>
+                        <li><a href="#"><i class="fas fa-map-marker-alt"></i> Toshkent vil., Olmaliq shahri</a></li>
+                        <li><a href="tel:+9989504577730"><i class="fas fa-phone"></i> +998 95 045 77 30</a></li>
                         <li><a href="#"><i class="fas fa-clock"></i> 7:00 - 23:00, har kuni</a></li>
                     </ul>
                 </div>
@@ -1023,333 +1134,405 @@
             
             <div class="footer-bottom">
                 <p>&copy; 2025 Mohina Pardalari. Barcha huquqlar himoyalangan.</p>
-                <p>Sayt <strong>Mohina Pardalari</strong> t.me/MR_Odilxon tomonidan yaratildi</p>
+                <p>Sayt <strong>Mohina Pardalari</strong> tomonidan yaratildi</p>
             </div>
         </div>
     </footer>
 
     <script>
-        // Parda ma'lumotlari
-        const products = [
-            {
-                id: 1,
-                name: "Zebo Kun Pardasi - Oq Rang",
-                category: "day",
-                price: 4500000,
-                oldPrice: 5200000,
-                description: "Yorug'likni yumshoq o'tkazadigan, oq rangdagi chiroyli kun pardasi. 100% poliester.",
-                features: ["Yumshoq", "Oq rang", "Yuviladi", "Uzoq muddatli"],
-                images: [
-                    "https://images.unsplash.com/photo-1575414003591-ece8c3d2f0a9?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
-                    "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
-                    "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
-                ],
-                badge: "Yangi"
-            },
-            {
-                id: 2,
-                name: "Tun Pardasi - Qora Qalin",
-                category: "night",
-                price: 6800000,
-                oldPrice: 7500000,
-                description: "To'liq qorong'ulik yaratadigan, qalin va sifatli tun pardasi. Issiqlik saqlaydi.",
-                features: ["Qalin", "Qorong'ulik", "Issiq saqlaydi", "Shovqin kamaytiradi"],
-                images: [
-                    "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
-                    "https://images.unsplash.com/photo-1598300042247-d088f8ab3a91?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
-                    "https://images.unsplash.com/photo-1503602642458-232111445657?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
-                ],
-                badge: "30% Chegirma"
-            },
-            {
-                id: 3,
-                name: "Gul Naqshli Zebo Parda",
-                category: "decorative",
-                price: 7500000,
-                oldPrice: 8500000,
-                description: "Gul naqshli, interyerga chiroy bag'ishlovchi zebo parda. Ipak mato.",
-                features: ["Gul naqsh", "Ipak mato", "Zebo", "Yugori sifat"],
-                images: [
-                    "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
-                    "https://images.unsplash.com/photo-1540574163026-643ea20ade25?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
-                    "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
-                ],
-                badge: "Yangi"
-            },
-            {
-                id: 4,
-                name: "Zamonaviy Rulon Parda",
-                category: "roller",
-                price: 5200000,
-                oldPrice: 6000000,
-                description: "Zamonaviy dizayndagi, o'zgaruvchan rulon parda. O'rnatish qulay.",
-                features: ["Rulon", "O'zgaruvchan", "Zamonaviy", "Qulay"],
-                images: [
-                    "https://images.unsplash.com/photo-1575414003591-ece8c3d2f0a9?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
-                    "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
-                    "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
-                ],
-                badge: null
-            },
-            {
-                id: 5,
-                name: "Roman Pardasi - Jigarrang",
-                category: "roman",
-                price: 8900000,
-                oldPrice: 9500000,
-                description: "Klassik roman pardasi, jigarrang rang. Nafis va uyg'un dizayn.",
-                features: ["Roman", "Jigarrang", "Klassik", "Nafis"],
-                images: [
-                    "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
-                    "https://images.unsplash.com/photo-1598300042247-d088f8ab3a91?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
-                    "https://images.unsplash.com/photo-1503602642458-232111445657?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
-                ],
-                badge: "Sotuvda"
-            },
-            {
-                id: 6,
-                name: "Ikki Qavatli Kun Pardasi",
-                category: "day",
-                price: 9500000,
-                oldPrice: 10500000,
-                description: "Ikki qatlamli kun pardasi. Ichki qatlam yorug'likni sochadi.",
-                features: ["2 qatlamli", "Yorug'lik sochadi", "Funksional", "Zamonaviy"],
-                images: [
-                    "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
-                    "https://images.unsplash.com/photo-1540574163026-643ea20ade25?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
-                    "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
-                ],
-                badge: "20% Chegirma"
-            },
-            {
-                id: 7,
-                name: "Bolalar Uchun Tun Pardasi",
-                category: "night",
-                price: 5800000,
-                oldPrice: 6500000,
-                description: "Bolalar xonasi uchun tun pardasi. Sevimli multfilm qahramonlari naqshi.",
-                features: ["Bolalar uchun", "Multfilm naqsh", "Qalin", "Xavfsiz"],
-                images: [
-                    "https://images.unsplash.com/photo-1575414003591-ece8c3d2f0a9?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
-                    "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
-                    "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
-                ],
-                badge: "Yangi"
-            },
-            {
-                id: 8,
-                name: "Ofis Uchun Rulon Parda",
-                category: "roller",
-                price: 6200000,
-                oldPrice: 7000000,
-                description: "Ofis va biznes markazlari uchun zamonaviy rulon parda. Professional ko'rinish.",
-                features: ["Ofis uchun", "Professional", "Qulay", "O'rnatish oson"],
-                images: [
-                    "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
-                    "https://images.unsplash.com/photo-1598300042247-d088f8ab3a91?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
-                    "https://images.unsplash.com/photo-1503602642458-232111445657?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
-                ],
-                badge: null
-            },
-            {
-                id: 9,
-                name: "Geometrik Naqshli Zebo Parda",
-                category: "decorative",
-                price: 8200000,
-                oldPrice: 9000000,
-                description: "Geometrik naqshli, zamonaviy zebo parda. Turli rang kombinatsiyalari.",
-                features: ["Geometrik naqsh", "Zamonaviy", "Turli rang", "Yuqori sifat"],
-                images: [
-                    "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
-                    "https://images.unsplash.com/photo-1540574163026-643ea20ade25?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
-                    "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
-                ],
-                badge: "Sotuvda"
-            },
-            {
-                id: 10,
-                name: "Lux Roman Pardasi - Oltin",
-                category: "roman",
-                price: 12500000,
-                oldPrice: 14000000,
-                description: "Luxury roman pardasi, oltin rangdagi. Interyerga hashamat bag'ishlaydi.",
-                features: ["Luxury", "Oltin rang", "Hashamatli", "Premium"],
-                images: [
-                    "https://images.unsplash.com/photo-1575414003591-ece8c3d2f0a9?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
-                    "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
-                    "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
-                ],
-                badge: "15% Chegirma"
-            }
-        ];
-
-        // DOM elementlari
-        const productsGrid = document.getElementById('productsGrid');
-        const categoryBtns = document.querySelectorAll('.category-btn');
-        const searchInput = document.querySelector('.search-box input');
-        
-        // Rasm slider funksiyalari
-        function nextImage(productId) {
-            const slider = document.getElementById(`slider-${productId}`);
-            const images = slider.querySelectorAll('.product-img');
-            const currentIndex = Array.from(images).findIndex(img => img.style.display !== 'none');
-            
-            images[currentIndex].style.display = 'none';
-            const nextIndex = (currentIndex + 1) % images.length;
-            images[nextIndex].style.display = 'block';
-        }
-        
-        function prevImage(productId) {
-            const slider = document.getElementById(`slider-${productId}`);
-            const images = slider.querySelectorAll('.product-img');
-            const currentIndex = Array.from(images).findIndex(img => img.style.display !== 'none');
-            
-            images[currentIndex].style.display = 'none';
-            const prevIndex = (currentIndex - 1 + images.length) % images.length;
-            images[prevIndex].style.display = 'block';
-        }
-        
-        // Mahsulotlarni chiqarish
-        function displayProducts(category = 'all', searchQuery = '') {
-            productsGrid.innerHTML = '';
-            
-            let filteredProducts = category === 'all' 
-                ? products 
-                : products.filter(product => product.category === category);
-            
-            // Qidiruv bo'yicha filtrlash
-            if (searchQuery) {
-                filteredProducts = filteredProducts.filter(product => 
-                    product.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
-                    product.description.toLowerCase().includes(searchQuery.toLowerCase()) ||
-                    product.features.some(feature => feature.toLowerCase().includes(searchQuery.toLowerCase()))
-                );
-            }
-            
-            if (filteredProducts.length === 0) {
-                productsGrid.innerHTML = `
-                    <div style="grid-column: 1 / -1; text-align: center; padding: 60px 20px;">
-                        <i class="fas fa-search" style="font-size: 60px; color: #ddd; margin-bottom: 20px;"></i>
-                        <h3 style="color: #666; margin-bottom: 10px;">Parda topilmadi</h3>
-                        <p style="color: #888;">Boshqa kategoriya yoki qidiruv so'zini sinab ko'ring</p>
-                    </div>
-                `;
-                return;
-            }
-            
-            filteredProducts.forEach((product, index) => {
-                const productCard = document.createElement('div');
-                productCard.className = 'product-card';
-                productCard.innerHTML = `
-                    <div class="product-image">
-                        <div class="product-img-slider" id="slider-${product.id}">
-                            <img src="${product.images[0]}" alt="${product.name}" class="product-img active" data-index="0" style="display: block;">
-                            <img src="${product.images[1]}" alt="${product.name}" class="product-img" data-index="1" style="display: none;">
-                            <img src="${product.images[2]}" alt="${product.name}" class="product-img" data-index="2" style="display: none;">
-                            
-                            <button class="img-nav img-prev" onclick="prevImage(${product.id})">
-                                <i class="fas fa-chevron-left"></i>
-                            </button>
-                            <button class="img-nav img-next" onclick="nextImage(${product.id})">
-                                <i class="fas fa-chevron-right"></i>
-                            </button>
-                            
-                            ${product.badge ? `<div class="product-badge">${product.badge}</div>` : ''}
-                        </div>
-                    </div>
-                    <div class="product-info">
-                        <h3 class="product-title">${product.name}</h3>
-                        <div class="product-price">
-                            ${product.oldPrice ? `<span class="old-price">${product.oldPrice.toLocaleString()} so'm</span>` : ''}
-                            ${product.price.toLocaleString()} so'm
-                        </div>
-                        <p class="product-description">${product.description}</p>
-                        
-                        <div class="product-features">
-                            ${product.features.map(feature => `<span class="feature-tag">${feature}</span>`).join('')}
-                        </div>
-                        
-                        <div class="product-actions">
-                            <button class="action-btn action-call" onclick="callProduct('${product.name}')">
-                                <i class="fas fa-phone"></i> Qo'ng'iroq
-                            </button>
-                            <button class="action-btn action-whatsapp" onclick="whatsappProduct('${product.name}')">
-                                <i class="fab fa-whatsapp"></i> WhatsApp
-                            </button>
-                        </div>
-                    </div>
-                `;
-                productsGrid.appendChild(productCard);
-            });
-        }
-        
-        // Qo'ng'iroq qilish funksiyasi
-        function callProduct(productName) {
-            const phoneNumber = "+9989504577730";
-            const message = `Salom! Men "${productName}" pardasini sotib olmoqchiman. Ma'lumot bering, iltimos.`;
-            
-            if (confirm(`"${productName}" pardasini sotib olish uchun qo'ng'iroq qilamizmi?\n\nTelefon: ${phoneNumber}`)) {
-                window.location.href = `tel:${phoneNumber}`;
-            }
-        }
-        
-        // WhatsApp orqali bog'lanish
-        function whatsappProduct(productName) {
-            const phoneNumber = "9989504577730";
-            const message = `Salom! Men "Mohina Pardalari" dan "${productName}" pardasini sotib olmoqchiman. Narx va batafsil ma'lumot bering, iltimos.`;
-            const encodedMessage = encodeURIComponent(message);
-            const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
-            
-            window.open(whatsappUrl, '_blank');
-        }
-        
-        // Telegram orqali bog'lanish (qo'shimcha funksiya)
-        function telegramProduct(productName) {
-            const username = "mohina_pardalari";
-            const message = `Salom! Men "${productName}" pardasini sotib olmoqchiman. Ma'lumot bering.`;
-            const encodedMessage = encodeURIComponent(message);
-            const telegramUrl = `https://t.me/${username}?text=${encodedMessage}`;
-            
-            window.open(telegramUrl, '_blank');
-        }
-        
         // DOM yuklanganda
-        document.addEventListener('DOMContentLoaded', () => {
-            // Mahsulotlarni chiqarish
-            displayProducts();
-            
-            // Kategoriya filterlari
-            categoryBtns.forEach(btn => {
-                btn.addEventListener('click', () => {
-                    categoryBtns.forEach(b => b.classList.remove('active'));
-                    btn.classList.add('active');
-                    displayProducts(btn.dataset.category, searchInput.value);
-                });
-            });
-            
-            // Qidiruv funksiyasi
-            searchInput.addEventListener('input', () => {
-                const activeCategory = document.querySelector('.category-btn.active');
-                displayProducts(activeCategory.dataset.category, searchInput.value);
-            });
-            
-            // Nav linklari uchun smooth scroll
+        document.addEventListener('DOMContentLoaded', function() {
+            // Smooth scroll funksiyasi
             document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-                anchor.addEventListener('click', function (e) {
+                anchor.addEventListener('click', function(e) {
                     e.preventDefault();
-                    
                     const targetId = this.getAttribute('href');
                     if (targetId === '#') return;
                     
                     const targetElement = document.querySelector(targetId);
                     if (targetElement) {
+                        const headerHeight = document.querySelector('.header').offsetHeight;
+                        const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - headerHeight;
+                        
                         window.scrollTo({
-                            top: targetElement.offsetTop - 80,
+                            top: targetPosition,
                             behavior: 'smooth'
                         });
                     }
                 });
             });
+
+            // Nav linklariga active class qo'shish
+            const navLinks = document.querySelectorAll('.nav-links a');
+            const sections = document.querySelectorAll('section');
+            
+            window.addEventListener('scroll', () => {
+                let current = '';
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop;
+                    const sectionHeight = section.clientHeight;
+                    const headerHeight = document.querySelector('.header').offsetHeight;
+                    
+                    if (scrollY >= (sectionTop - headerHeight - 100)) {
+                        current = section.getAttribute('id');
+                    }
+                });
+
+                navLinks.forEach(link => {
+                    link.classList.remove('active');
+                    if (link.getAttribute('href') === `#${current}`) {
+                        link.classList.add('active');
+                    }
+                });
+
+                // Bosh sahifa uchun
+                if (scrollY < 100) {
+                    navLinks.forEach(link => link.classList.remove('active'));
+                    document.querySelector('.nav-links a[href="#"]').classList.add('active');
+                }
+            });
+
+            // Rasm slider funksiyalari (mobil uchun optimallashtirilgan)
+            function setupImageSliders() {
+                document.querySelectorAll('.product-img-slider').forEach(slider => {
+                    const images = slider.querySelectorAll('.product-img');
+                    if (images.length === 0) return;
+                    
+                    let currentIndex = 0;
+                    
+                    // Mobile touch events
+                    let startX = 0;
+                    let endX = 0;
+                    
+                    slider.addEventListener('touchstart', (e) => {
+                        startX = e.touches[0].clientX;
+                    });
+                    
+                    slider.addEventListener('touchend', (e) => {
+                        endX = e.changedTouches[0].clientX;
+                        handleSwipe();
+                    });
+                    
+                    function handleSwipe() {
+                        const threshold = 50;
+                        const diff = startX - endX;
+                        
+                        if (Math.abs(diff) > threshold) {
+                            if (diff > 0) {
+                                // Swipe left - next image
+                                nextImage();
+                            } else {
+                                // Swipe right - previous image
+                                prevImage();
+                            }
+                        }
+                    }
+                    
+                    function nextImage() {
+                        images[currentIndex].style.display = 'none';
+                        currentIndex = (currentIndex + 1) % images.length;
+                        images[currentIndex].style.display = 'block';
+                    }
+                    
+                    function prevImage() {
+                        images[currentIndex].style.display = 'none';
+                        currentIndex = (currentIndex - 1 + images.length) % images.length;
+                        images[currentIndex].style.display = 'block';
+                    }
+                    
+                    // Button listeners
+                    const prevBtn = slider.querySelector('.img-prev');
+                    const nextBtn = slider.querySelector('.img-next');
+                    
+                    if (prevBtn) {
+                        prevBtn.addEventListener('click', (e) => {
+                            e.stopPropagation();
+                            prevImage();
+                        });
+                    }
+                    
+                    if (nextBtn) {
+                        nextBtn.addEventListener('click', (e) => {
+                            e.stopPropagation();
+                            nextImage();
+                        });
+                    }
+                });
+            }
+
+            // Mahsulotlarni chiqarish funksiyasi
+            function displayProducts(category = 'all', searchQuery = '') {
+                const productsGrid = document.getElementById('productsGrid');
+                if (!productsGrid) return;
+                
+                productsGrid.innerHTML = '';
+                
+                let filteredProducts = category === 'all' 
+                    ? window.productsData || [] 
+                    : (window.productsData || []).filter(product => product.category === category);
+                
+                // Qidiruv bo'yicha filtrlash
+                if (searchQuery) {
+                    filteredProducts = filteredProducts.filter(product => 
+                        product.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
+                        product.description.toLowerCase().includes(searchQuery.toLowerCase()) ||
+                        product.features.some(feature => feature.toLowerCase().includes(searchQuery.toLowerCase()))
+                    );
+                }
+                
+                if (filteredProducts.length === 0) {
+                    productsGrid.innerHTML = `
+                        <div style="grid-column: 1 / -1; text-align: center; padding: 40px 20px;">
+                            <i class="fas fa-search" style="font-size: 40px; color: #ddd; margin-bottom: 15px;"></i>
+                            <h3 style="color: #666; margin-bottom: 10px; font-size: 18px;">Parda topilmadi</h3>
+                            <p style="color: #888; font-size: 14px;">Boshqa kategoriya yoki qidiruv so'zini sinab ko'ring</p>
+                        </div>
+                    `;
+                    return;
+                }
+                
+                filteredProducts.forEach((product) => {
+                    const productCard = document.createElement('div');
+                    productCard.className = 'product-card';
+                    productCard.innerHTML = `
+                        <div class="product-image">
+                            <div class="product-img-slider" id="slider-${product.id}">
+                                ${product.images.map((img, index) => `
+                                    <img src="${img}" alt="${product.name}" class="product-img" 
+                                         style="display: ${index === 0 ? 'block' : 'none'};">
+                                `).join('')}
+                                
+                                <button class="img-nav img-prev" aria-label="Oldingi rasm">
+                                    <i class="fas fa-chevron-left"></i>
+                                </button>
+                                <button class="img-nav img-next" aria-label="Keyingi rasm">
+                                    <i class="fas fa-chevron-right"></i>
+                                </button>
+                                
+                                ${product.badge ? `<div class="product-badge">${product.badge}</div>` : ''}
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-title">${product.name}</h3>
+                            <div class="product-price">
+                                ${product.oldPrice ? `<span class="old-price">${product.oldPrice.toLocaleString()} so'm</span>` : ''}
+                                ${product.price.toLocaleString()} so'm
+                            </div>
+                            <p class="product-description">${product.description}</p>
+                            
+                            <div class="product-features">
+                                ${product.features.map(feature => `<span class="feature-tag">${feature}</span>`).join('')}
+                            </div>
+                            
+                            <div class="product-actions">
+                                <button class="action-btn action-call" onclick="callProduct('${product.name.replace(/'/g, "\\'")}')">
+                                    <i class="fas fa-phone"></i> Qo'ng'iroq
+                                </button>
+                                <button class="action-btn action-whatsapp" onclick="whatsappProduct('${product.name.replace(/'/g, "\\'")}')">
+                                    <i class="fab fa-whatsapp"></i> WhatsApp
+                                </button>
+                            </div>
+                        </div>
+                    `;
+                    productsGrid.appendChild(productCard);
+                });
+                
+                // Rasm sliderlarini sozlash
+                setTimeout(setupImageSliders, 100);
+            }
+
+            // Global funksiyalar
+            window.callProduct = function(productName) {
+                const phoneNumber = "+9989504577730";
+                if (confirm(`${productName} pardasini sotib olish uchun qo'ng'iroq qilamizmi?\n\nTelefon: ${phoneNumber}`)) {
+                    window.location.href = `tel:${phoneNumber}`;
+                }
+            };
+
+            window.whatsappProduct = function(productName) {
+                const phoneNumber = "9989504577730";
+                const message = `Salom! Men "Mohina Pardalari" dan "${productName}" pardasini sotib olmoqchiman. Narx va batafsil ma'lumot bering, iltimos.`;
+                const encodedMessage = encodeURIComponent(message);
+                const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
+                window.open(whatsappUrl, '_blank');
+            };
+
+            // Mahsulot ma'lumotlari
+            window.productsData = [
+                {
+                    id: 1,
+                    name: "Zebo Kun Pardasi - Oq Rang",
+                    category: "day",
+                    price: 4500000,
+                    oldPrice: 5200000,
+                    description: "Yorug'likni yumshoq o'tkazadigan, oq rangdagi chiroyli kun pardasi. 100% poliester.",
+                    features: ["Yumshoq", "Oq rang", "Yuviladi", "Uzoq muddatli"],
+                    images: [
+                        "https://images.unsplash.com/photo-1575414003591-ece8c3d2f0a9?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
+                        "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
+                        "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+                    ],
+                    badge: "Yangi"
+                },
+                {
+                    id: 2,
+                    name: "Tun Pardasi - Qora Qalin",
+                    category: "night",
+                    price: 6800000,
+                    oldPrice: 7500000,
+                    description: "To'liq qorong'ulik yaratadigan, qalin va sifatli tun pardasi. Issiqlik saqlaydi.",
+                    features: ["Qalin", "Qorong'ulik", "Issiq saqlaydi", "Shovqin kamaytiradi"],
+                    images: [
+                        "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
+                        "https://images.unsplash.com/photo-1598300042247-d088f8ab3a91?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
+                        "https://images.unsplash.com/photo-1503602642458-232111445657?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+                    ],
+                    badge: "30% Chegirma"
+                },
+                {
+                    id: 3,
+                    name: "Gul Naqshli Zebo Parda",
+                    category: "decorative",
+                    price: 7500000,
+                    oldPrice: 8500000,
+                    description: "Gul naqshli, interyerga chiroy bag'ishlovchi zebo parda. Ipak mato.",
+                    features: ["Gul naqsh", "Ipak mato", "Zebo", "Yugori sifat"],
+                    images: [
+                        "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
+                        "https://images.unsplash.com/photo-1540574163026-643ea20ade25?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
+                        "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+                    ],
+                    badge: "Yangi"
+                },
+                {
+                    id: 4,
+                    name: "Zamonaviy Rulon Parda",
+                    category: "roller",
+                    price: 5200000,
+                    oldPrice: 6000000,
+                    description: "Zamonaviy dizayndagi, o'zgaruvchan rulon parda. O'rnatish qulay.",
+                    features: ["Rulon", "O'zgaruvchan", "Zamonaviy", "Qulay"],
+                    images: [
+                        "https://images.unsplash.com/photo-1575414003591-ece8c3d2f0a9?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
+                        "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
+                        "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+                    ],
+                    badge: null
+                },
+                {
+                    id: 5,
+                    name: "Roman Pardasi - Jigarrang",
+                    category: "roman",
+                    price: 8900000,
+                    oldPrice: 9500000,
+                    description: "Klassik roman pardasi, jigarrang rang. Nafis va uyg'un dizayn.",
+                    features: ["Roman", "Jigarrang", "Klassik", "Nafis"],
+                    images: [
+                        "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
+                        "https://images.unsplash.com/photo-1598300042247-d088f8ab3a91?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
+                        "https://images.unsplash.com/photo-1503602642458-232111445657?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+                    ],
+                    badge: "Sotuvda"
+                },
+                {
+                    id: 6,
+                    name: "Ikki Qavatli Kun Pardasi",
+                    category: "day",
+                    price: 9500000,
+                    oldPrice: 10500000,
+                    description: "Ikki qatlamli kun pardasi. Ichki qatlam yorug'likni sochadi.",
+                    features: ["2 qatlamli", "Yorug'lik sochadi", "Funksional", "Zamonaviy"],
+                    images: [
+                        "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
+                        "https://images.unsplash.com/photo-1540574163026-643ea20ade25?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
+                        "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+                    ],
+                    badge: "20% Chegirma"
+                },
+                {
+                    id: 7,
+                    name: "Bolalar Uchun Tun Pardasi",
+                    category: "night",
+                    price: 5800000,
+                    oldPrice: 6500000,
+                    description: "Bolalar xonasi uchun tun pardasi. Sevimli multfilm qahramonlari naqshi.",
+                    features: ["Bolalar uchun", "Multfilm naqsh", "Qalin", "Xavfsiz"],
+                    images: [
+                        "https://images.unsplash.com/photo-1575414003591-ece8c3d2f0a9?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
+                        "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
+                        "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+                    ],
+                    badge: "Yangi"
+                },
+                {
+                    id: 8,
+                    name: "Ofis Uchun Rulon Parda",
+                    category: "roller",
+                    price: 6200000,
+                    oldPrice: 7000000,
+                    description: "Ofis va biznes markazlari uchun zamonaviy rulon parda. Professional ko'rinish.",
+                    features: ["Ofis uchun", "Professional", "Qulay", "O'rnatish oson"],
+                    images: [
+                        "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
+                        "https://images.unsplash.com/photo-1598300042247-d088f8ab3a91?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
+                        "https://images.unsplash.com/photo-1503602642458-232111445657?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+                    ],
+                    badge: null
+                },
+                {
+                    id: 9,
+                    name: "Geometrik Naqshli Zebo Parda",
+                    category: "decorative",
+                    price: 8200000,
+                    oldPrice: 9000000,
+                    description: "Geometrik naqshli, zamonaviy zebo parda. Turli rang kombinatsiyalari.",
+                    features: ["Geometrik naqsh", "Zamonaviy", "Turli rang", "Yuqori sifat"],
+                    images: [
+                        "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
+                        "https://images.unsplash.com/photo-1540574163026-643ea20ade25?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
+                        "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+                    ],
+                    badge: "Sotuvda"
+                },
+                {
+                    id: 10,
+                    name: "Lux Roman Pardasi - Oltin",
+                    category: "roman",
+                    price: 12500000,
+                    oldPrice: 14000000,
+                    description: "Luxury roman pardasi, oltin rangdagi. Interyerga hashamat bag'ishlaydi.",
+                    features: ["Luxury", "Oltin rang", "Hashamatli", "Premium"],
+                    images: [
+                        "https://images.unsplash.com/photo-1575414003591-ece8c3d2f0a9?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
+                        "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
+                        "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+                    ],
+                    badge: "15% Chegirma"
+                }
+            ];
+
+            // Kategoriya filterlari
+            const categoryBtns = document.querySelectorAll('.category-btn');
+            categoryBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    categoryBtns.forEach(b => b.classList.remove('active'));
+                    btn.classList.add('active');
+                    const searchInput = document.querySelector('.search-box input');
+                    displayProducts(btn.dataset.category, searchInput ? searchInput.value : '');
+                });
+            });
+
+            // Qidiruv funksiyasi
+            const searchInput = document.querySelector('.search-box input');
+            if (searchInput) {
+                searchInput.addEventListener('input', () => {
+                    const activeCategory = document.querySelector('.category-btn.active');
+                    displayProducts(activeCategory ? activeCategory.dataset.category : 'all', searchInput.value);
+                });
+            }
+
+            // Dastlabki mahsulotlarni chiqarish
+            displayProducts();
         });
     </script>
 </body>
