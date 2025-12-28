@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mebelchi Bratan - Sifatli Mebellar Do'koni</title>
+    <title>Mohina Pardalari - Zebo va Zamonaviy Pardalar</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
@@ -16,18 +16,18 @@
         }
 
         :root {
-            --primary-color: #8B4513;
-            --secondary-color: #D2691E;
-            --accent-color: #FFA500;
-            --light-color: #F5F5DC;
-            --dark-color: #654321;
+            --primary-color: #9c27b0;
+            --secondary-color: #e1bee7;
+            --accent-color: #ff9800;
+            --light-color: #f3e5f5;
+            --dark-color: #6a1b9a;
             --text-color: #333;
             --shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
             --transition: all 0.3s ease;
         }
 
         body {
-            background-color: #f9f9f9;
+            background-color: #fafafa;
             color: var(--text-color);
             line-height: 1.6;
         }
@@ -40,39 +40,20 @@
 
         /* Header Styles */
         .header {
-            background-color: white;
-            box-shadow: var(--shadow);
+            background: linear-gradient(135deg, var(--dark-color), var(--primary-color));
+            color: white;
             position: sticky;
             top: 0;
             z-index: 1000;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
         }
 
         .header-top {
-            background-color: var(--dark-color);
-            color: white;
-            padding: 10px 0;
-            font-size: 14px;
+            padding: 15px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
         }
 
         .header-top .container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .header-contact i {
-            margin-right: 5px;
-        }
-
-        .header-contact span {
-            margin-right: 20px;
-        }
-
-        .header-main {
-            padding: 15px 0;
-        }
-
-        .header-main .container {
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -83,48 +64,103 @@
             align-items: center;
             gap: 15px;
             text-decoration: none;
-            color: var(--dark-color);
+            color: white;
         }
 
         .logo-icon {
-            font-size: 32px;
-            color: var(--primary-color);
+            font-size: 36px;
+            color: #ffeb3b;
         }
 
         .logo-text h1 {
-            font-size: 24px;
-            font-weight: 700;
+            font-size: 28px;
+            font-weight: 800;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
         }
 
         .logo-text p {
-            font-size: 12px;
-            color: #666;
+            font-size: 13px;
+            opacity: 0.9;
+        }
+
+        .header-contact {
+            display: flex;
+            align-items: center;
+            gap: 25px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 15px;
+        }
+
+        .contact-item i {
+            color: #ffeb3b;
+            font-size: 18px;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 12px;
+            margin-left: 20px;
+        }
+
+        .social-link {
+            width: 36px;
+            height: 36px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .social-link:hover {
+            background-color: #ffeb3b;
+            color: var(--dark-color);
+            transform: translateY(-3px);
+        }
+
+        /* Navigation */
+        .nav {
+            background-color: rgba(0, 0, 0, 0.15);
+        }
+
+        .nav .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0;
         }
 
         .nav-links {
             display: flex;
             list-style: none;
-            gap: 30px;
         }
 
         .nav-links a {
+            color: white;
             text-decoration: none;
-            color: var(--text-color);
+            padding: 18px 25px;
             font-weight: 600;
             display: flex;
             align-items: center;
             gap: 8px;
             transition: var(--transition);
-            padding: 8px 0;
             position: relative;
         }
 
         .nav-links a:hover {
-            color: var(--primary-color);
+            background-color: rgba(255, 255, 255, 0.1);
         }
 
         .nav-links a.active {
-            color: var(--primary-color);
+            background-color: rgba(255, 255, 255, 0.15);
         }
 
         .nav-links a.active::after {
@@ -134,54 +170,40 @@
             left: 0;
             width: 100%;
             height: 3px;
-            background-color: var(--primary-color);
+            background-color: #ffeb3b;
         }
 
-        .user-actions {
-            display: flex;
-            align-items: center;
-            gap: 20px;
-        }
-
-        .action-btn {
+        .search-box {
             position: relative;
-            background: none;
+            margin-right: 20px;
+        }
+
+        .search-box input {
+            padding: 10px 15px 10px 40px;
             border: none;
-            font-size: 22px;
-            color: var(--dark-color);
-            cursor: pointer;
-            transition: var(--transition);
+            border-radius: 30px;
+            width: 250px;
+            background-color: rgba(255, 255, 255, 0.9);
+            font-size: 14px;
         }
 
-        .action-btn:hover {
-            color: var(--primary-color);
-        }
-
-        .badge {
+        .search-box i {
             position: absolute;
-            top: -8px;
-            right: -8px;
-            background-color: var(--accent-color);
-            color: white;
-            border-radius: 50%;
-            width: 20px;
-            height: 20px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 12px;
-            font-weight: bold;
+            left: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--dark-color);
         }
 
-        /* Hero Section */
-        .hero {
-            background: linear-gradient(rgba(139, 69, 19, 0.85), rgba(139, 69, 19, 0.9)), url('https://images.unsplash.com/photo-1556228453-efd6c1ff04f6?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80');
+        /* Hero Banner */
+        .hero-banner {
+            background: linear-gradient(rgba(106, 27, 154, 0.9), rgba(156, 39, 176, 0.9)), url('https://images.unsplash.com/photo-1583847268964-b28dc8f51f92?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80');
             background-size: cover;
             background-position: center;
             color: white;
-            padding: 80px 0;
+            padding: 100px 0;
             text-align: center;
-            margin-bottom: 50px;
+            margin-bottom: 60px;
         }
 
         .hero-content {
@@ -189,67 +211,29 @@
             margin: 0 auto;
         }
 
-        .hero h2 {
-            font-size: 42px;
+        .hero-content h2 {
+            font-size: 46px;
             margin-bottom: 20px;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
         }
 
-        .hero p {
-            font-size: 18px;
+        .hero-content p {
+            font-size: 20px;
             margin-bottom: 30px;
-            opacity: 0.9;
+            opacity: 0.95;
         }
 
-        /* Registration Form */
-        .registration {
-            background-color: white;
-            padding: 40px;
-            border-radius: 10px;
-            max-width: 600px;
-            margin: 40px auto 0;
-            box-shadow: var(--shadow);
+        .highlight {
+            color: #ffeb3b;
+            font-weight: 700;
         }
 
-        .registration h3 {
-            color: var(--dark-color);
-            margin-bottom: 25px;
-            text-align: center;
-            font-size: 24px;
-        }
-
-        .form-group {
-            margin-bottom: 20px;
-        }
-
-        .form-group label {
-            display: block;
-            margin-bottom: 8px;
-            font-weight: 600;
-            color: var(--dark-color);
-        }
-
-        .form-group input {
-            width: 100%;
-            padding: 14px;
-            border: 2px solid #e0e0e0;
-            border-radius: 8px;
-            font-size: 16px;
-            transition: var(--transition);
-        }
-
-        .form-group input:focus {
-            border-color: var(--primary-color);
-            outline: none;
-        }
-
-        .form-row {
+        /* Call to Action */
+        .cta-box {
             display: flex;
-            gap: 20px;
-        }
-
-        .form-row .form-group {
-            flex: 1;
+            gap: 30px;
+            justify-content: center;
+            margin-top: 40px;
         }
 
         .btn {
@@ -257,38 +241,49 @@
             align-items: center;
             justify-content: center;
             gap: 10px;
-            background-color: var(--primary-color);
-            color: white;
+            background-color: #ffeb3b;
+            color: var(--dark-color);
             border: none;
-            padding: 16px 32px;
+            padding: 16px 35px;
             border-radius: 8px;
             font-size: 16px;
-            font-weight: 600;
+            font-weight: 700;
             cursor: pointer;
             transition: var(--transition);
             text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
         }
 
         .btn:hover {
-            background-color: var(--dark-color);
-            transform: translateY(-2px);
+            background-color: white;
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
         }
 
-        .btn-accent {
-            background-color: var(--accent-color);
+        .btn-whatsapp {
+            background-color: #25d366;
+            color: white;
         }
 
-        .btn-accent:hover {
-            background-color: #e69500;
+        .btn-telegram {
+            background-color: #0088cc;
+            color: white;
         }
 
-        .btn-block {
-            width: 100%;
+        .btn-instagram {
+            background: linear-gradient(45deg, #405de6, #5851db, #833ab4, #c13584, #e1306c, #fd1d1d);
+            color: white;
         }
 
-        /* Products Section */
+        /* Categories */
+        .categories-section {
+            padding: 40px 0 60px;
+            background-color: white;
+        }
+
         .section-title {
-            font-size: 32px;
+            font-size: 36px;
             color: var(--dark-color);
             margin-bottom: 40px;
             text-align: center;
@@ -302,15 +297,65 @@
             bottom: 0;
             left: 50%;
             transform: translateX(-50%);
-            width: 100px;
+            width: 120px;
             height: 4px;
-            background-color: var(--primary-color);
+            background-color: var(--accent-color);
             border-radius: 2px;
         }
 
+        .section-subtitle {
+            text-align: center;
+            color: #666;
+            max-width: 700px;
+            margin: 0 auto 50px;
+            font-size: 18px;
+        }
+
+        .categories-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 25px;
+            margin-bottom: 60px;
+        }
+
+        .category-card {
+            background-color: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            text-align: center;
+            padding: 25px 20px;
+            border: 2px solid transparent;
+        }
+
+        .category-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--primary-color);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .category-icon {
+            font-size: 50px;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+
+        .category-card h3 {
+            font-size: 22px;
+            color: var(--dark-color);
+            margin-bottom: 10px;
+        }
+
+        .category-card p {
+            color: #666;
+            font-size: 14px;
+        }
+
+        /* Products Section */
         .products-section {
             padding: 60px 0;
-            background-color: white;
+            background-color: #f9f9f9;
         }
 
         .category-filter {
@@ -322,13 +367,14 @@
         }
 
         .category-btn {
-            padding: 12px 25px;
-            background-color: var(--light-color);
-            border: 2px solid var(--light-color);
+            padding: 12px 30px;
+            background-color: white;
+            border: 2px solid var(--secondary-color);
             border-radius: 30px;
             font-weight: 600;
             cursor: pointer;
             transition: var(--transition);
+            color: var(--dark-color);
         }
 
         .category-btn.active {
@@ -344,14 +390,14 @@
 
         .products-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 30px;
-            margin-bottom: 50px;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 35px;
+            margin-bottom: 60px;
         }
 
         .product-card {
             background-color: white;
-            border-radius: 12px;
+            border-radius: 15px;
             overflow: hidden;
             box-shadow: var(--shadow);
             transition: var(--transition);
@@ -359,13 +405,12 @@
         }
 
         .product-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+            transform: translateY(-12px);
+            box-shadow: 0 20px 35px rgba(0, 0, 0, 0.15);
         }
 
         .product-image {
-            height: 220px;
-            background-color: var(--light-color);
+            height: 250px;
             position: relative;
             overflow: hidden;
         }
@@ -386,7 +431,7 @@
             position: absolute;
             top: 50%;
             transform: translateY(-50%);
-            background-color: rgba(0, 0, 0, 0.5);
+            background-color: rgba(0, 0, 0, 0.6);
             color: white;
             border: none;
             width: 40px;
@@ -398,18 +443,23 @@
             justify-content: center;
             font-size: 18px;
             transition: var(--transition);
+            opacity: 0;
+        }
+
+        .product-card:hover .img-nav {
+            opacity: 1;
         }
 
         .img-nav:hover {
-            background-color: rgba(0, 0, 0, 0.8);
+            background-color: rgba(0, 0, 0, 0.9);
         }
 
         .img-prev {
-            left: 10px;
+            left: 15px;
         }
 
         .img-next {
-            right: 10px;
+            right: 15px;
         }
 
         .product-badge {
@@ -418,10 +468,11 @@
             right: 15px;
             background-color: var(--accent-color);
             color: white;
-            padding: 5px 12px;
+            padding: 6px 15px;
             border-radius: 20px;
             font-size: 12px;
-            font-weight: 600;
+            font-weight: 700;
+            z-index: 2;
         }
 
         .product-info {
@@ -429,21 +480,22 @@
         }
 
         .product-title {
-            font-size: 20px;
+            font-size: 22px;
             font-weight: 700;
             color: var(--dark-color);
             margin-bottom: 10px;
+            min-height: 56px;
         }
 
         .product-price {
-            font-size: 24px;
+            font-size: 28px;
             font-weight: 800;
             color: var(--primary-color);
             margin-bottom: 15px;
         }
 
         .product-price .old-price {
-            font-size: 18px;
+            font-size: 20px;
             color: #999;
             text-decoration: line-through;
             margin-right: 10px;
@@ -452,287 +504,123 @@
         .product-description {
             color: #666;
             margin-bottom: 20px;
-            font-size: 14px;
+            font-size: 15px;
             line-height: 1.5;
+            min-height: 70px;
         }
 
         .product-features {
             display: flex;
             flex-wrap: wrap;
             gap: 10px;
-            margin-bottom: 20px;
+            margin-bottom: 25px;
         }
 
         .feature-tag {
             background-color: var(--light-color);
-            padding: 5px 12px;
-            border-radius: 15px;
-            font-size: 12px;
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 13px;
             color: var(--dark-color);
-        }
-
-        .quantity-controls {
-            display: flex;
-            align-items: center;
-            margin-bottom: 20px;
-            gap: 10px;
-        }
-
-        .qty-btn {
-            width: 40px;
-            height: 40px;
-            background-color: #f0f0f0;
-            border: none;
-            border-radius: 8px;
-            font-size: 18px;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: var(--transition);
-        }
-
-        .qty-btn:hover {
-            background-color: #e0e0e0;
-        }
-
-        .qty-input {
-            width: 70px;
-            height: 40px;
-            text-align: center;
-            border: 2px solid #e0e0e0;
-            border-radius: 8px;
-            font-size: 16px;
-            font-weight: 600;
         }
 
         .product-actions {
             display: flex;
-            gap: 10px;
+            gap: 12px;
         }
 
-        .btn-icon {
-            width: 45px;
-            height: 45px;
-            padding: 0;
-            justify-content: center;
-            border-radius: 8px;
-        }
-
-        /* Cart Modal */
-        .modal {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.7);
-            z-index: 2000;
-            align-items: center;
-            justify-content: center;
-            padding: 20px;
-        }
-
-        .modal.active {
-            display: flex;
-        }
-
-        .modal-content {
-            background-color: white;
-            width: 100%;
-            max-width: 900px;
-            max-height: 85vh;
-            border-radius: 12px;
-            overflow: hidden;
-            display: flex;
-            flex-direction: column;
-        }
-
-        .modal-header {
-            background-color: var(--dark-color);
-            color: white;
-            padding: 20px 30px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .modal-header h3 {
-            font-size: 24px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .close-modal {
-            background: none;
-            border: none;
-            color: white;
-            font-size: 28px;
-            cursor: pointer;
-            transition: var(--transition);
-        }
-
-        .close-modal:hover {
-            transform: rotate(90deg);
-        }
-
-        .modal-body {
-            padding: 30px;
-            flex-grow: 1;
-            overflow-y: auto;
-        }
-
-        .cart-empty {
-            text-align: center;
-            padding: 40px;
-            color: #666;
-        }
-
-        .cart-empty i {
-            font-size: 60px;
-            color: #ddd;
-            margin-bottom: 20px;
-        }
-
-        .cart-items {
-            width: 100%;
-            border-collapse: collapse;
-        }
-
-        .cart-items th {
-            text-align: left;
-            padding: 15px;
-            border-bottom: 2px solid #eee;
-            color: var(--dark-color);
-            font-weight: 600;
-        }
-
-        .cart-items td {
-            padding: 20px 15px;
-            border-bottom: 1px solid #eee;
-            vertical-align: middle;
-        }
-
-        .cart-item-img {
-            width: 80px;
-            height: 80px;
-            background-color: var(--light-color);
-            border-radius: 8px;
-            overflow: hidden;
-        }
-
-        .cart-item-img img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .cart-item-name {
-            font-weight: 600;
-            color: var(--dark-color);
-            margin-bottom: 5px;
-        }
-
-        .cart-item-price {
-            color: var(--primary-color);
-            font-weight: 600;
-        }
-
-        .cart-item-qty {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .cart-item-total {
-            font-weight: 700;
-            color: var(--dark-color);
-            font-size: 18px;
-        }
-
-        .remove-item {
-            background: none;
-            border: none;
-            color: #ff4444;
-            font-size: 20px;
-            cursor: pointer;
-            transition: var(--transition);
-        }
-
-        .remove-item:hover {
-            color: #cc0000;
-            transform: scale(1.1);
-        }
-
-        .cart-summary {
-            background-color: #f9f9f9;
-            padding: 25px;
-            border-radius: 8px;
-            margin-top: 30px;
-        }
-
-        .summary-row {
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 15px;
-            font-size: 16px;
-        }
-
-        .summary-total {
-            font-size: 24px;
-            font-weight: 700;
-            color: var(--primary-color);
-            border-top: 2px solid #eee;
-            padding-top: 15px;
-            margin-top: 15px;
-        }
-
-        /* Account Modal */
-        .account-modal .modal-content {
-            max-width: 500px;
-        }
-
-        .account-tabs {
-            display: flex;
-            border-bottom: 1px solid #eee;
-            margin-bottom: 30px;
-        }
-
-        .account-tab {
+        .action-btn {
             flex: 1;
-            text-align: center;
-            padding: 15px;
-            background: none;
-            border: none;
-            border-bottom: 3px solid transparent;
-            font-size: 16px;
+            padding: 14px;
+            border-radius: 8px;
             font-weight: 600;
             cursor: pointer;
             transition: var(--transition);
-            color: #666;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            border: 2px solid transparent;
         }
 
-        .account-tab.active {
+        .action-call {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .action-call:hover {
+            background-color: var(--dark-color);
+            transform: translateY(-3px);
+        }
+
+        .action-whatsapp {
+            background-color: #25d366;
+            color: white;
+        }
+
+        .action-whatsapp:hover {
+            background-color: #1da851;
+            transform: translateY(-3px);
+        }
+
+        /* Contact Section */
+        .contact-section {
+            padding: 80px 0;
+            background-color: white;
+            text-align: center;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin-top: 50px;
+        }
+
+        .contact-card {
+            background-color: var(--light-color);
+            padding: 40px 30px;
+            border-radius: 15px;
+            transition: var(--transition);
+        }
+
+        .contact-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow);
+        }
+
+        .contact-icon {
+            font-size: 50px;
             color: var(--primary-color);
-            border-bottom-color: var(--primary-color);
+            margin-bottom: 25px;
         }
 
-        .account-form {
-            display: none;
+        .contact-card h3 {
+            font-size: 24px;
+            color: var(--dark-color);
+            margin-bottom: 15px;
         }
 
-        .account-form.active {
+        .contact-card p {
+            color: #666;
+            margin-bottom: 20px;
+            font-size: 16px;
+        }
+
+        .contact-card a {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 18px;
             display: block;
+            margin-top: 15px;
         }
 
         /* Footer */
         .footer {
-            background-color: var(--dark-color);
+            background: linear-gradient(135deg, var(--dark-color), #4a148c);
             color: white;
             padding: 60px 0 30px;
-            margin-top: 60px;
         }
 
         .footer-grid {
@@ -743,9 +631,9 @@
         }
 
         .footer-col h4 {
-            font-size: 20px;
+            font-size: 22px;
             margin-bottom: 25px;
-            color: var(--light-color);
+            color: #ffeb3b;
             position: relative;
             padding-bottom: 10px;
         }
@@ -757,7 +645,7 @@
             left: 0;
             width: 50px;
             height: 3px;
-            background-color: var(--accent-color);
+            background-color: white;
         }
 
         .footer-col ul {
@@ -769,16 +657,16 @@
         }
 
         .footer-col ul li a {
-            color: #ccc;
+            color: #ddd;
             text-decoration: none;
             transition: var(--transition);
             display: flex;
             align-items: center;
-            gap: 8px;
+            gap: 10px;
         }
 
         .footer-col ul li a:hover {
-            color: white;
+            color: #ffeb3b;
             transform: translateX(5px);
         }
 
@@ -786,94 +674,96 @@
             text-align: center;
             padding-top: 30px;
             border-top: 1px solid rgba(255, 255, 255, 0.1);
-            color: #aaa;
+            color: #bbb;
             font-size: 14px;
         }
 
-        .social-links {
+        .footer-social {
             display: flex;
-            gap: 15px;
-            margin-top: 20px;
-        }
-
-        .social-link {
-            width: 40px;
-            height: 40px;
-            background-color: rgba(255, 255, 255, 0.1);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
             justify-content: center;
-            color: white;
-            text-decoration: none;
-            transition: var(--transition);
-        }
-
-        .social-link:hover {
-            background-color: var(--accent-color);
-            transform: translateY(-3px);
+            gap: 15px;
+            margin-top: 30px;
         }
 
         /* Responsive */
         @media (max-width: 992px) {
-            .nav-links {
-                display: none;
+            .header-top .container {
+                flex-direction: column;
+                gap: 15px;
             }
             
-            .hero h2 {
-                font-size: 32px;
+            .nav-links {
+                overflow-x: auto;
+                padding-bottom: 10px;
+            }
+            
+            .search-box input {
+                width: 200px;
+            }
+            
+            .hero-content h2 {
+                font-size: 36px;
+            }
+            
+            .cta-box {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav .container {
+                flex-direction: column;
+                padding: 15px 20px;
+            }
+            
+            .search-box {
+                width: 100%;
+                margin: 15px 0;
+            }
+            
+            .search-box input {
+                width: 100%;
+            }
+            
+            .hero-content h2 {
+                font-size: 28px;
+            }
+            
+            .hero-content p {
+                font-size: 16px;
+            }
+            
+            .section-title {
+                font-size: 28px;
             }
             
             .products-grid {
                 grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
             }
-        }
-
-        @media (max-width: 768px) {
-            .form-row {
-                flex-direction: column;
-                gap: 0;
-            }
-            
-            .header-contact {
-                font-size: 12px;
-            }
-            
-            .category-filter {
-                justify-content: flex-start;
-                overflow-x: auto;
-                padding-bottom: 10px;
-            }
-            
-            .category-btn {
-                white-space: nowrap;
-            }
-            
-            .cart-items {
-                display: block;
-                overflow-x: auto;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .hero {
-                padding: 50px 0;
-            }
-            
-            .hero h2 {
-                font-size: 26px;
-            }
-            
-            .registration {
-                padding: 25px;
-            }
             
             .product-actions {
                 flex-direction: column;
             }
+        }
+
+        @media (max-width: 480px) {
+            .logo-text h1 {
+                font-size: 22px;
+            }
             
-            .btn-icon {
-                width: 100%;
+            .contact-item {
+                font-size: 13px;
+            }
+            
+            .nav-links a {
+                padding: 15px;
+                font-size: 14px;
+            }
+            
+            .category-btn {
+                padding: 10px 20px;
+                font-size: 14px;
             }
         }
     </style>
@@ -883,83 +773,134 @@
     <header class="header">
         <div class="header-top">
             <div class="container">
+                <a href="#" class="logo">
+                    <div class="logo-icon">
+                        <i class="fas fa-tshirt"></i>
+                    </div>
+                    <div class="logo-text">
+                        <h1>Mohina Pardalari</h1>
+                        <p>Zebo va Zamonaviy Pardalar Do'koni</p>
+                    </div>
+                </a>
+                
                 <div class="header-contact">
-                    <span><i class="fas fa-phone"></i> +998 90 123 45 67</span>
-                    <span><i class="fas fa-envelope"></i> info@mebelchibratan.uz</span>
-                </div>
-                <div class="header-social">
-                    <a href="#" class="social-link"><i class="fab fa-telegram"></i></a>
-                    <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
-                    <a href="#" class="social-link"><i class="fab fa-facebook"></i></a>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <span>+998 90 123 45 67</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Toshkent shahri</span>
+                    </div>
+                    
+                    <div class="social-links">
+                        <a href="https://t.me/mohina_pardalari" class="social-link" target="_blank">
+                            <i class="fab fa-telegram"></i>
+                        </a>
+                        <a href="https://instagram.com/mohina_pardalari" class="social-link" target="_blank">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://wa.me/998901234567" class="social-link" target="_blank">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
         
-        <div class="header-main">
+        <nav class="nav">
             <div class="container">
-                <a href="#" class="logo">
-                    <div class="logo-icon">
-                        <i class="fas fa-couch"></i>
-                    </div>
-                    <div class="logo-text">
-                        <h1>Mebelchi Bratan</h1>
-                        <p>Sifatli mebellar do'koni</p>
-                    </div>
-                </a>
-                
                 <ul class="nav-links">
-                    <li><a href="#" class="nav-link active"><i class="fas fa-home"></i> Bosh Sahifa</a></li>
-                    <li><a href="#products" class="nav-link"><i class="fas fa-shopping-bag"></i> Mebellar</a></li>
-                    <li><a href="#" class="nav-link"><i class="fas fa-info-circle"></i> Biz Haqimizda</a></li>
-                    <li><a href="#" class="nav-link"><i class="fas fa-phone-alt"></i> Aloqa</a></li>
+                    <li><a href="#" class="active"><i class="fas fa-home"></i> Bosh Sahifa</a></li>
+                    <li><a href="#categories"><i class="fas fa-th-large"></i> Kategoriyalar</a></li>
+                    <li><a href="#products"><i class="fas fa-store"></i> Pardalar</a></li>
+                    <li><a href="#contact"><i class="fas fa-phone-alt"></i> Bog'lanish</a></li>
+                    <li><a href="#"><i class="fas fa-info-circle"></i> Biz Haqimizda</a></li>
                 </ul>
                 
-                <div class="user-actions">
-                    <button class="action-btn" id="cartBtn">
-                        <i class="fas fa-shopping-cart"></i>
-                        <span class="badge" id="cartBadge">0</span>
-                    </button>
-                    <button class="action-btn" id="accountBtn">
-                        <i class="fas fa-user-circle"></i>
-                    </button>
-                    <button class="btn btn-accent" id="orderBtn">
-                        <i class="fas fa-truck"></i> Buyurtma
-                    </button>
+                <div class="search-box">
+                    <i class="fas fa-search"></i>
+                    <input type="text" placeholder="Parda qidirish...">
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Banner -->
+    <section class="hero-banner">
+        <div class="container">
+            <div class="hero-content">
+                <h2>Mohina Pardalari - <span class="highlight">Uyingizga Go'zallik</span></h2>
+                <p>Eng chiroyli, zamonaviy va sifatli pardalar faqat bizda! 100+ turdagi pardalar, O'zbekiston bo'ylab yetkazib berish.</p>
+                
+                <div class="cta-box">
+                    <a href="tel:+998901234567" class="btn">
+                        <i class="fas fa-phone"></i> Hoziroq Qo'ng'iroq Qiling
+                    </a>
+                    <a href="https://t.me/mohina_pardalari" class="btn btn-telegram" target="_blank">
+                        <i class="fab fa-telegram"></i> Telegramda Sotib Olish
+                    </a>
+                    <a href="https://wa.me/998901234567" class="btn btn-whatsapp" target="_blank">
+                        <i class="fab fa-whatsapp"></i> WhatsAppda Sotib Olish
+                    </a>
                 </div>
             </div>
         </div>
-    </header>
+    </section>
 
-    <!-- Hero Section -->
-    <section class="hero">
+    <!-- Categories -->
+    <section class="categories-section" id="categories">
         <div class="container">
-            <div class="hero-content">
-                <h2>Mebelchi Bratan - Uyingizga Issiqlik</h2>
-                <p>O'zbekistondagi eng yaxshi mebellar to'plami. 10 yillik tajriba, sifat kafolati va eng yaxshi narxlar.</p>
+            <h2 class="section-title">Parda Kategoriyalari</h2>
+            <p class="section-subtitle">Har xil turdagi, rangdagi va dizayndagi pardalar. O'z xohishingizga mosini tanlang!</p>
+            
+            <div class="categories-grid">
+                <div class="category-card">
+                    <div class="category-icon">
+                        <i class="fas fa-sun"></i>
+                    </div>
+                    <h3>Kun Pardalari</h3>
+                    <p>Yorug'likni o'tkazadigan, yumshoq va yengil pardalar</p>
+                </div>
                 
-                <div class="registration">
-                    <h3>Birinchi buyurtmangiz uchun 10% chegirma</h3>
-                    <form id="registrationForm">
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label for="firstName">Ism</label>
-                                <input type="text" id="firstName" placeholder="Ismingiz" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="lastName">Familiya</label>
-                                <input type="text" id="lastName" placeholder="Familiyangiz" required>
-                            </div>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="phone">Telefon Raqam</label>
-                            <input type="tel" id="phone" placeholder="+998 90 123 45 67" required>
-                        </div>
-                        
-                        <button type="submit" class="btn btn-accent btn-block">
-                            <i class="fas fa-gift"></i> Chegirma olish
-                        </button>
-                    </form>
+                <div class="category-card">
+                    <div class="category-icon">
+                        <i class="fas fa-moon"></i>
+                    </div>
+                    <h3>Tun Pardalari</h3>
+                    <p>Qorong'ulik yaratadigan, qalin va himoyalovchi pardalar</p>
+                </div>
+                
+                <div class="category-card">
+                    <div class="category-icon">
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h3>Zebo Pardalar</h3>
+                    <p>Interyerga chiroy bag'ishlovchi, bezakli pardalar</p>
+                </div>
+                
+                <div class="category-card">
+                    <div class="category-icon">
+                        <i class="fas fa-ruler-combined"></i>
+                    </div>
+                    <h3>Rulon Pardalar</h3>
+                    <p>Zamonaviy, o'zgaruvchan va foydalanish uchun qulay</p>
+                </div>
+                
+                <div class="category-card">
+                    <div class="category-icon">
+                        <i class="fas fa-layer-group"></i>
+                    </div>
+                    <h3>Qavatli Pardalar</h3>
+                    <p>Ikki qatlamli, funksional va chiroyli dizayn</p>
+                </div>
+                
+                <div class="category-card">
+                    <div class="category-icon">
+                        <i class="fas fa-th-large"></i>
+                    </div>
+                    <h3>Roman Pardalar</h3>
+                    <p>Klassik, nafis va uyga joziba bag'ishlovchi</p>
                 </div>
             </div>
         </div>
@@ -968,15 +909,16 @@
     <!-- Products Section -->
     <section class="products-section" id="products">
         <div class="container">
-            <h2 class="section-title">Bizning Mebellar</h2>
+            <h2 class="section-title">Eng Mashhur Pardalar</h2>
+            <p class="section-subtitle">Har oyda 1000+ mijozlarimiz tanlovi. Siz ham o'zingizga yoqgan pardani tanlang!</p>
             
             <div class="category-filter">
                 <button class="category-btn active" data-category="all">Hammasi</button>
-                <button class="category-btn" data-category="sofa">Divanlar</button>
-                <button class="category-btn" data-category="table">Stollar</button>
-                <button class="category-btn" data-category="chair">Stullar</button>
-                <button class="category-btn" data-category="bed">Yotoqlar</button>
-                <button class="category-btn" data-category="wardrobe">Shkaflar</button>
+                <button class="category-btn" data-category="day">Kun Pardalari</button>
+                <button class="category-btn" data-category="night">Tun Pardalari</button>
+                <button class="category-btn" data-category="decorative">Zebo Pardalar</button>
+                <button class="category-btn" data-category="roller">Rulon Pardalar</button>
+                <button class="category-btn" data-category="roman">Roman Pardalar</button>
             </div>
             
             <div class="products-grid" id="productsGrid">
@@ -985,141 +927,66 @@
         </div>
     </section>
 
-    <!-- Cart Modal -->
-    <div class="modal" id="cartModal">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h3><i class="fas fa-shopping-cart"></i> Savatchangiz</h3>
-                <button class="close-modal" id="closeCartModal">&times;</button>
-            </div>
-            <div class="modal-body">
-                <div id="emptyCart" class="cart-empty">
-                    <i class="fas fa-shopping-cart"></i>
-                    <h3>Savatchangiz bo'sh</h3>
-                    <p>Mahsulot qo'shish uchun "Savatchaga qo'shish" tugmasini bosing</p>
-                    <button class="btn" id="continueShopping" style="margin-top: 20px;">
-                        <i class="fas fa-shopping-bag"></i> Xaridni davom ettirish
-                    </button>
+    <!-- Contact Section -->
+    <section class="contact-section" id="contact">
+        <div class="container">
+            <h2 class="section-title">Biz bilan Bog'laning</h2>
+            <p class="section-subtitle">Har qanday savol yoki buyurtma uchun quyidagi kontaktlar orqali bog'lanishingiz mumkin</p>
+            
+            <div class="contact-grid">
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <i class="fas fa-phone-alt"></i>
+                    </div>
+                    <h3>Telefon Orqali</h3>
+                    <p>Ish vaqtida (9:00 - 20:00) qo'ng'iroq qiling va maslahat oling</p>
+                    <a href="tel:+998901234567">+998 90 123 45 67</a>
+                    <a href="tel:+998901112233">+998 90 111 22 33</a>
                 </div>
                 
-                <div id="cartContent" style="display: none;">
-                    <table class="cart-items">
-                        <thead>
-                            <tr>
-                                <th>Mahsulot</th>
-                                <th>Narxi</th>
-                                <th>Miqdori</th>
-                                <th>Jami</th>
-                                <th></th>
-                            </tr>
-                        </thead>
-                        <tbody id="cartItems">
-                            <!-- Cart items will be loaded here -->
-                        </tbody>
-                    </table>
-                    
-                    <div class="cart-summary">
-                        <div class="summary-row">
-                            <span>Mahsulotlar:</span>
-                            <span id="subtotal">0</span> so'm
-                        </div>
-                        <div class="summary-row">
-                            <span>Yetkazib berish:</span>
-                            <span id="delivery">50,000</span> so'm
-                        </div>
-                        <div class="summary-row">
-                            <span>Chegirma (10%):</span>
-                            <span id="discount">0</span> so'm
-                        </div>
-                        <div class="summary-row summary-total">
-                            <span>Umumiy summa:</span>
-                            <span id="cartTotal">0</span> so'm
-                        </div>
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <i class="fab fa-telegram"></i>
                     </div>
-                    
-                    <div style="display: flex; gap: 15px; margin-top: 30px;">
-                        <button class="btn" id="clearCart">
-                            <i class="fas fa-trash"></i> Savatchani tozalash
-                        </button>
-                        <button class="btn btn-accent" id="checkoutBtn" style="flex: 1;">
-                            <i class="fas fa-credit-card"></i> Buyurtma berish
-                        </button>
+                    <h3>Telegram Orqali</h3>
+                    <p>24/7 qo'llab-quvvatlash. Rasm yuboring, narx va maslahat oling</p>
+                    <a href="https://t.me/mohina_pardalari" target="_blank">@mohina_pardalari</a>
+                    <a href="https://t.me/mohina_admin" target="_blank">@mohina_admin</a>
+                </div>
+                
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <i class="fab fa-instagram"></i>
                     </div>
+                    <h3>Instagram Orqali</h3>
+                    <p>Bizning yangi pardalarimizni Instagramda ko'ring va buyurtma bering</p>
+                    <a href="https://instagram.com/mohina_pardalari" target="_blank">@mohina_pardalari</a>
+                    <a href="https://instagram.com/mohina_sotuv" target="_blank">@mohina_sotuv</a>
                 </div>
             </div>
         </div>
-    </div>
-
-    <!-- Account Modal -->
-    <div class="modal account-modal" id="accountModal">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h3><i class="fas fa-user-circle"></i> Mening Profilim</h3>
-                <button class="close-modal" id="closeAccountModal">&times;</button>
-            </div>
-            <div class="modal-body">
-                <div class="account-tabs">
-                    <button class="account-tab active" data-tab="login">Kirish</button>
-                    <button class="account-tab" data-tab="register">Ro'yxatdan o'tish</button>
-                </div>
-                
-                <form id="loginForm" class="account-form active">
-                    <div class="form-group">
-                        <label for="loginPhone">Telefon Raqam</label>
-                        <input type="tel" id="loginPhone" placeholder="+998 90 123 45 67" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="loginPassword">Parol</label>
-                        <input type="password" id="loginPassword" placeholder="Parolingiz" required>
-                    </div>
-                    <button type="submit" class="btn btn-block">
-                        <i class="fas fa-sign-in-alt"></i> Tizimga kirish
-                    </button>
-                </form>
-                
-                <form id="registerForm" class="account-form">
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label for="regFirstName">Ism</label>
-                            <input type="text" id="regFirstName" placeholder="Ismingiz" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="regLastName">Familiya</label>
-                            <input type="text" id="regLastName" placeholder="Familiyangiz" required>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label for="regPhone">Telefon Raqam</label>
-                        <input type="tel" id="regPhone" placeholder="+998 90 123 45 67" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="regPassword">Parol</label>
-                        <input type="password" id="regPassword" placeholder="Parol yarating" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="regConfirmPassword">Parolni tasdiqlash</label>
-                        <input type="password" id="regConfirmPassword" placeholder="Parolni qayta kiriting" required>
-                    </div>
-                    <button type="submit" class="btn btn-accent btn-block">
-                        <i class="fas fa-user-plus"></i> Ro'yxatdan o'tish
-                    </button>
-                </form>
-            </div>
-        </div>
-    </div>
+    </section>
 
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-col">
-                    <h4>Mebelchi Bratan</h4>
-                    <p>O'zbekistondagi eng yaxshi mebellar do'koni. 10 yillik tajriba, sifat kafolati va mijozlarga xizmat.</p>
-                    <div class="social-links">
-                        <a href="#" class="social-link"><i class="fab fa-telegram"></i></a>
-                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
-                        <a href="#" class="social-link"><i class="fab fa-facebook"></i></a>
-                        <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+                    <h4>Mohina Pardalari</h4>
+                    <p>O'zbekistondagi eng yirik parda do'konlaridan biri. 5 yillik tajriba, 10000+ mijoz, sifat kafolati.</p>
+                    <div class="footer-social">
+                        <a href="https://t.me/mohina_pardalari" class="social-link" target="_blank">
+                            <i class="fab fa-telegram"></i>
+                        </a>
+                        <a href="https://instagram.com/mohina_pardalari" class="social-link" target="_blank">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://facebook.com/mohina_pardalari" class="social-link" target="_blank">
+                            <i class="fab fa-facebook"></i>
+                        </a>
+                        <a href="https://youtube.com/mohina_pardalari" class="social-link" target="_blank">
+                            <i class="fab fa-youtube"></i>
+                        </a>
                     </div>
                 </div>
                 
@@ -1127,226 +994,248 @@
                     <h4>Tez Havolalar</h4>
                     <ul>
                         <li><a href="#"><i class="fas fa-chevron-right"></i> Bosh Sahifa</a></li>
-                        <li><a href="#products"><i class="fas fa-chevron-right"></i> Mebellar</a></li>
-                        <li><a href="#"><i class="fas fa-chevron-right"></i> Aksiyalar</a></li>
-                        <li><a href="#"><i class="fas fa-chevron-right"></i> Yangiliklar</a></li>
+                        <li><a href="#categories"><i class="fas fa-chevron-right"></i> Kategoriyalar</a></li>
+                        <li><a href="#products"><i class="fas fa-chevron-right"></i> Pardalar</a></li>
+                        <li><a href="#contact"><i class="fas fa-chevron-right"></i> Bog'lanish</a></li>
                     </ul>
                 </div>
                 
                 <div class="footer-col">
-                    <h4>Mijozlarga</h4>
+                    <h4>Xizmatlar</h4>
                     <ul>
                         <li><a href="#"><i class="fas fa-chevron-right"></i> Yetkazib berish</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> O'rnatish xizmati</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> O'lchov olish</a></li>
                         <li><a href="#"><i class="fas fa-chevron-right"></i> Kafolat</a></li>
-                        <li><a href="#"><i class="fas fa-chevron-right"></i> To'lov usullari</a></li>
-                        <li><a href="#"><i class="fas fa-chevron-right"></i> Savol-Javob</a></li>
                     </ul>
                 </div>
                 
                 <div class="footer-col">
                     <h4>Aloqa</h4>
                     <ul>
-                        <li><a href="#"><i class="fas fa-map-marker-alt"></i> Toshkent sh., Yunusobod tumani</a></li>
-                        <li><a href="#"><i class="fas fa-phone"></i> +998 90 123 45 67</a></li>
-                        <li><a href="#"><i class="fas fa-envelope"></i> info@mebelchibratan.uz</a></li>
+                        <li><a href="#"><i class="fas fa-map-marker-alt"></i> Toshkent sh., Chilonzor tumani</a></li>
+                        <li><a href="tel:+998901234567"><i class="fas fa-phone"></i> +998 90 123 45 67</a></li>
+                        <li><a href="mailto:info@mohinaparda.uz"><i class="fas fa-envelope"></i> info@mohinaparda.uz</a></li>
                         <li><a href="#"><i class="fas fa-clock"></i> 9:00 - 20:00, har kuni</a></li>
                     </ul>
                 </div>
             </div>
             
             <div class="footer-bottom">
-                <p>&copy; 2023 Mebelchi Bratan. Barcha huquqlar himoyalangan.</p>
-                <p>Sayt <strong>Mebelchi Bratan</strong> jamoasi tomonidan yaratildi</p>
+                <p>&copy; 2023 Mohina Pardalari. Barcha huquqlar himoyalangan.</p>
+                <p>Sayt <strong>Mohina Pardalari</strong> jamoasi tomonidan yaratildi</p>
             </div>
         </div>
     </footer>
 
     <script>
-        // Mebel ma'lumotlari
+        // Parda ma'lumotlari
         const products = [
             {
                 id: 1,
-                name: "Zamonaviy Divan",
-                category: "sofa",
-                price: 4500000,
-                oldPrice: 5200000,
-                description: "Zamonaviy dizayndagi qulay divan. 3 kishilik, o'zgaruvchan holat.",
-                features: ["3 kishilik", "O'zgaruvchan", "Iltimos yog'och"],
+                name: "Zebo Kun Pardasi - Oq Rang",
+                category: "day",
+                price: 450000,
+                oldPrice: 520000,
+                description: "Yorug'likni yumshoq o'tkazadigan, oq rangdagi chiroyli kun pardasi. 100% poliester.",
+                features: ["Yumshoq", "Oq rang", "Yuviladi", "Uzun muddatli"],
                 images: [
-                    "https://images.unsplash.com/photo-1540574163026-643ea20ade25?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
-                    "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
-                    "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+                    "https://images.unsplash.com/photo-1575414003591-ece8c3d2f0a9?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
+                    "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
+                    "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
                 ],
                 badge: "Yangi"
             },
             {
                 id: 2,
-                name: "Oval Stol",
-                category: "table",
-                price: 1200000,
-                oldPrice: 1500000,
-                description: "Oval shakldagi zamonaviy oshxona stoli. 6 kishilik.",
-                features: ["6 kishilik", "Oval", "MDF"],
-                images: [
-                    "https://images.unsplash.com/photo-1556228453-efd6c1ff04f6?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
-                    "https://images.unsplash.com/photo-1567538096630-e0c55bd6374c?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
-                    "https://images.unsplash.com/photo-1565791389712-3929c20b0c1a?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
-                ],
-                badge: "Chegirma"
-            },
-            {
-                id: 3,
-                name: "Ofis Stuli",
-                category: "chair",
-                price: 850000,
-                oldPrice: 950000,
-                description: "Ofis uchun qulay va zamonaviy stul. Balandlik sozlash imkoniyati.",
-                features: ["Aylanadigan", "Yumshoq", "Sozlama"],
+                name: "Tun Pardasi - Qora Qalin",
+                category: "night",
+                price: 680000,
+                oldPrice: 750000,
+                description: "To'liq qorong'ulik yaratadigan, qalin va sifatli tun pardasi. Issiqlik saqlaydi.",
+                features: ["Qalin", "Qorong'ulik", "Issiq saqlaydi", "Shovqin kamaytiradi"],
                 images: [
                     "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
                     "https://images.unsplash.com/photo-1598300042247-d088f8ab3a91?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
                     "https://images.unsplash.com/photo-1503602642458-232111445657?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
                 ],
+                badge: "Chegirma"
+            },
+            {
+                id: 3,
+                name: "Gul Naqshli Zebo Parda",
+                category: "decorative",
+                price: 750000,
+                oldPrice: 850000,
+                description: "Gul naqshli, interyerga chiroy bag'ishlovchi zebo parda. Ipak mato.",
+                features: ["Gul naqsh", "Ipak mato", "Zebo", "Yugori sifat"],
+                images: [
+                    "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
+                    "https://images.unsplash.com/photo-1540574163026-643ea20ade25?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
+                    "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+                ],
                 badge: "Yangi"
             },
             {
                 id: 4,
-                name: "Ikki qavatli karavot",
-                category: "bed",
-                price: 3500000,
-                oldPrice: 3800000,
-                description: "Bolalar xonasi uchun ikki qavatli karavot. Xavfsiz va qulay.",
-                features: ["2 qavatli", "Xavfsiz", "Shkaf bilan"],
+                name: "Zamonaviy Rulon Parda",
+                category: "roller",
+                price: 520000,
+                oldPrice: 600000,
+                description: "Zamonaviy dizayndagi, o'zgaruvchan rulon parda. O'rnatish qulay.",
+                features: ["Rulon", "O'zgaruvchan", "Zamonaviy", "Qulay"],
                 images: [
-                    "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
-                    "https://images.unsplash.com/photo-1566665797739-1674de7a421a?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
-                    "https://images.unsplash.com/photo-1556228720-195a672e8a03?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+                    "https://images.unsplash.com/photo-1575414003591-ece8c3d2f0a9?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
+                    "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
+                    "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
                 ],
                 badge: null
             },
             {
                 id: 5,
-                name: "Yumshoq Divan",
-                category: "sofa",
-                price: 3200000,
-                oldPrice: 3500000,
-                description: "Yumshoq va qulay divan. 2 kishilik, turli rang variantlari.",
-                features: ["2 kishilik", "Yumshoq", "Rang tanlash"],
+                name: "Roman Pardasi - Jigarrang",
+                category: "roman",
+                price: 890000,
+                oldPrice: 950000,
+                description: "Klassik roman pardasi, jigarrang rang. Nafis va uyg'un dizayn.",
+                features: ["Roman", "Jigarrang", "Klassik", "Nafis"],
                 images: [
-                    "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
-                    "https://images.unsplash.com/photo-1540574163026-643ea20ade25?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
-                    "https://images.unsplash.com/photo-1582582621959-48d27397dc69?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+                    "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
+                    "https://images.unsplash.com/photo-1598300042247-d088f8ab3a91?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
+                    "https://images.unsplash.com/photo-1503602642458-232111445657?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
                 ],
                 badge: "Sotuvda"
             },
             {
                 id: 6,
-                name: "Katta Shkaf",
-                category: "wardrobe",
-                price: 2800000,
-                oldPrice: 3200000,
-                description: "Katta o'lchamdagi garderob shkafi. 3 eshikli, oq rang.",
-                features: ["3 eshikli", "Katta", "Oq rang"],
+                name: "Ikki Qavatli Kun Pardasi",
+                category: "day",
+                price: 950000,
+                oldPrice: 1050000,
+                description: "Ikki qatlamli kun pardasi. Ichki qatlam yorug'likni sochadi.",
+                features: ["2 qatlamli", "Yorug'lik sochadi", "Funksional", "Zamonaviy"],
                 images: [
-                    "https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
-                    "https://images.unsplash.com/photo-1586023873532-738d0431a01e?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
-                    "https://images.unsplash.com/photo-1554995207-c18c203602cb?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+                    "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
+                    "https://images.unsplash.com/photo-1540574163026-643ea20ade25?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
+                    "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
                 ],
                 badge: "Chegirma"
             },
             {
                 id: 7,
-                name: "Kofe Stoli",
-                category: "table",
-                price: 650000,
-                oldPrice: 750000,
-                description: "Zamonaviy kofe stoli. Kichik o'lcham, yengil va qulay.",
-                features: ["Yengil", "Zamonaviy", "Kichik"],
+                name: "Bolalar Uchun Tun Pardasi",
+                category: "night",
+                price: 580000,
+                oldPrice: 650000,
+                description: "Bolalar xonasi uchun tun pardasi. Sevimli multfilm qahramonlari naqshi.",
+                features: ["Bolalar uchun", "Multfilm naqsh", "Qalin", "Xavfsiz"],
                 images: [
-                    "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
-                    "https://images.unsplash.com/photo-1567538096630-e0c55bd6374c?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
-                    "https://images.unsplash.com/photo-1565791389712-3929c20b0c1a?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+                    "https://images.unsplash.com/photo-1575414003591-ece8c3d2f0a9?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
+                    "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
+                    "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
                 ],
                 badge: "Yangi"
             },
             {
                 id: 8,
-                name: "Qo'shma Divan",
-                category: "sofa",
-                price: 5200000,
-                oldPrice: 5800000,
-                description: "Qo'shma divan to'plami. 3+2+1, miks ranglar.",
-                features: ["To'plam", "3+2+1", "Miks rang"],
+                name: "Ofis Uchun Rulon Parda",
+                category: "roller",
+                price: 620000,
+                oldPrice: 700000,
+                description: "Ofis va biznes markazlari uchun zamonaviy rulon parda. Professional ko'rinish.",
+                features: ["Ofis uchun", "Professional", "Qulay", "O'rnatish oson"],
                 images: [
-                    "https://images.unsplash.com/photo-1540574163026-643ea20ade25?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
-                    "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
-                    "https://images.unsplash.com/photo-1582582621959-48d27397dc69?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+                    "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
+                    "https://images.unsplash.com/photo-1598300042247-d088f8ab3a91?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
+                    "https://images.unsplash.com/photo-1503602642458-232111445657?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
                 ],
                 badge: null
             },
             {
                 id: 9,
-                name: "Raxt Shkafi",
-                category: "wardrobe",
-                price: 1800000,
-                oldPrice: 2100000,
-                description: "Raxt saqlash uchun shkaf. 2 eshikli, ichki qismi tartibli.",
-                features: ["2 eshikli", "Raxt shkafi", "Tartibli"],
+                name: "Geometrik Naqshli Zebo Parda",
+                category: "decorative",
+                price: 820000,
+                oldPrice: 900000,
+                description: "Geometrik naqshli, zamonaviy zebo parda. Turli rang kombinatsiyalari.",
+                features: ["Geometrik naqsh", "Zamonaviy", "Turli rang", "Yuqori sifat"],
                 images: [
-                    "https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
-                    "https://images.unsplash.com/photo-1586023873532-738d0431a01e?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
-                    "https://images.unsplash.com/photo-1554995207-c18c203602cb?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+                    "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
+                    "https://images.unsplash.com/photo-1540574163026-643ea20ade25?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
+                    "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
                 ],
                 badge: "Sotuvda"
             },
             {
                 id: 10,
-                name: "Yotoq Karavot",
-                category: "bed",
-                price: 2900000,
-                oldPrice: 3200000,
-                description: "Katta o'lchamdagi yotoq karavot. 200x180 sm, qattiq baza.",
-                features: ["200x180 sm", "Qattiq baza", "Shkaf bilan"],
+                name: "Lux Roman Pardasi - Oltin",
+                category: "roman",
+                price: 1250000,
+                oldPrice: 1400000,
+                description: "Luxury roman pardasi, oltin rangdagi. Interyerga hashamat bag'ishlaydi.",
+                features: ["Luxury", "Oltin rang", "Hashamatli", "Premium"],
                 images: [
-                    "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
-                    "https://images.unsplash.com/photo-1566665797739-1674de7a421a?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
-                    "https://images.unsplash.com/photo-1556228720-195a672e8a03?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+                    "https://images.unsplash.com/photo-1575414003591-ece8c3d2f0a9?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
+                    "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
+                    "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
                 ],
                 badge: "Chegirma"
             }
         ];
 
-        // Savatcha ma'lumotlari
-        let cart = [];
-        
         // DOM elementlari
         const productsGrid = document.getElementById('productsGrid');
-        const cartBtn = document.getElementById('cartBtn');
-        const accountBtn = document.getElementById('accountBtn');
-        const cartModal = document.getElementById('cartModal');
-        const accountModal = document.getElementById('accountModal');
-        const closeCartModal = document.getElementById('closeCartModal');
-        const closeAccountModal = document.getElementById('closeAccountModal');
-        const cartBadge = document.getElementById('cartBadge');
         const categoryBtns = document.querySelectorAll('.category-btn');
-        const registrationForm = document.getElementById('registrationForm');
-        const cartItems = document.getElementById('cartItems');
-        const emptyCart = document.getElementById('emptyCart');
-        const cartContent = document.getElementById('cartContent');
-        const continueShopping = document.getElementById('continueShopping');
-        const clearCartBtn = document.getElementById('clearCart');
-        const checkoutBtn = document.getElementById('checkoutBtn');
-        const accountTabs = document.querySelectorAll('.account-tab');
-        const loginForm = document.getElementById('loginForm');
-        const registerForm = document.getElementById('registerForm');
+        const searchInput = document.querySelector('.search-box input');
+        
+        // Rasm slider funksiyalari
+        function nextImage(productId) {
+            const slider = document.getElementById(`slider-${productId}`);
+            const images = slider.querySelectorAll('.product-img');
+            const currentIndex = Array.from(images).findIndex(img => img.style.display !== 'none');
+            
+            images[currentIndex].style.display = 'none';
+            const nextIndex = (currentIndex + 1) % images.length;
+            images[nextIndex].style.display = 'block';
+        }
+        
+        function prevImage(productId) {
+            const slider = document.getElementById(`slider-${productId}`);
+            const images = slider.querySelectorAll('.product-img');
+            const currentIndex = Array.from(images).findIndex(img => img.style.display !== 'none');
+            
+            images[currentIndex].style.display = 'none';
+            const prevIndex = (currentIndex - 1 + images.length) % images.length;
+            images[prevIndex].style.display = 'block';
+        }
         
         // Mahsulotlarni chiqarish
-        function displayProducts(category = 'all') {
+        function displayProducts(category = 'all', searchQuery = '') {
             productsGrid.innerHTML = '';
             
-            const filteredProducts = category === 'all' 
+            let filteredProducts = category === 'all' 
                 ? products 
                 : products.filter(product => product.category === category);
+            
+            // Qidiruv bo'yicha filtrlash
+            if (searchQuery) {
+                filteredProducts = filteredProducts.filter(product => 
+                    product.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
+                    product.description.toLowerCase().includes(searchQuery.toLowerCase()) ||
+                    product.features.some(feature => feature.toLowerCase().includes(searchQuery.toLowerCase()))
+                );
+            }
+            
+            if (filteredProducts.length === 0) {
+                productsGrid.innerHTML = `
+                    <div style="grid-column: 1 / -1; text-align: center; padding: 60px 20px;">
+                        <i class="fas fa-search" style="font-size: 60px; color: #ddd; margin-bottom: 20px;"></i>
+                        <h3 style="color: #666; margin-bottom: 10px;">Parda topilmadi</h3>
+                        <p style="color: #888;">Boshqa kategoriya yoki qidiruv so'zini sinab ko'ring</p>
+                    </div>
+                `;
+                return;
+            }
             
             filteredProducts.forEach((product, index) => {
                 const productCard = document.createElement('div');
@@ -1354,7 +1243,7 @@
                 productCard.innerHTML = `
                     <div class="product-image">
                         <div class="product-img-slider" id="slider-${product.id}">
-                            <img src="${product.images[0]}" alt="${product.name}" class="product-img active" data-index="0">
+                            <img src="${product.images[0]}" alt="${product.name}" class="product-img active" data-index="0" style="display: block;">
                             <img src="${product.images[1]}" alt="${product.name}" class="product-img" data-index="1" style="display: none;">
                             <img src="${product.images[2]}" alt="${product.name}" class="product-img" data-index="2" style="display: none;">
                             
@@ -1380,24 +1269,12 @@
                             ${product.features.map(feature => `<span class="feature-tag">${feature}</span>`).join('')}
                         </div>
                         
-                        <div class="quantity-controls">
-                            <button class="qty-btn" onclick="changeQuantity(${product.id}, -1)">-</button>
-                            <input type="number" class="qty-input" id="qty-${product.id}" value="1" min="1">
-                            <button class="qty-btn" onclick="changeQuantity(${product.id}, 1)">+</button>
-                            <div style="margin-left: auto; font-weight: 600;">
-                                Jami: <span id="total-${product.id}">${product.price.toLocaleString()}</span> so'm
-                            </div>
-                        </div>
-                        
                         <div class="product-actions">
-                            <button class="btn btn-icon" onclick="addToWishlist(${product.id})">
-                                <i class="far fa-heart"></i>
+                            <button class="action-btn action-call" onclick="callProduct('${product.name}')">
+                                <i class="fas fa-phone"></i> Qo'ng'iroq
                             </button>
-                            <button class="btn" onclick="addToCart(${product.id})" style="flex: 1;">
-                                <i class="fas fa-cart-plus"></i> Savatchaga
-                            </button>
-                            <button class="btn btn-accent btn-icon" onclick="quickView(${product.id})">
-                                <i class="fas fa-eye"></i>
+                            <button class="action-btn action-whatsapp" onclick="whatsappProduct('${product.name}')">
+                                <i class="fab fa-whatsapp"></i> WhatsApp
                             </button>
                         </div>
                     </div>
@@ -1406,208 +1283,34 @@
             });
         }
         
-        // Rasm slider funksiyalari
-        function nextImage(productId) {
-            const slider = document.getElementById(`slider-${productId}`);
-            const images = slider.querySelectorAll('.product-img');
-            const currentIndex = Array.from(images).findIndex(img => img.style.display !== 'none');
+        // Qo'ng'iroq qilish funksiyasi
+        function callProduct(productName) {
+            const phoneNumber = "+998901234567";
+            const message = `Salom! Men "${productName}" pardasini sotib olmoqchiman. Ma'lumot bering, iltimos.`;
             
-            images[currentIndex].style.display = 'none';
-            const nextIndex = (currentIndex + 1) % images.length;
-            images[nextIndex].style.display = 'block';
-        }
-        
-        function prevImage(productId) {
-            const slider = document.getElementById(`slider-${productId}`);
-            const images = slider.querySelectorAll('.product-img');
-            const currentIndex = Array.from(images).findIndex(img => img.style.display !== 'none');
-            
-            images[currentIndex].style.display = 'none';
-            const prevIndex = (currentIndex - 1 + images.length) % images.length;
-            images[prevIndex].style.display = 'block';
-        }
-        
-        // Miqdor o'zgartirish
-        function changeQuantity(productId, change) {
-            const input = document.getElementById(`qty-${productId}`);
-            const product = products.find(p => p.id === productId);
-            let newValue = parseInt(input.value) + change;
-            
-            if (newValue < 1) newValue = 1;
-            
-            input.value = newValue;
-            updateProductTotal(productId);
-        }
-        
-        // Mahsulot jami narxini yangilash
-        function updateProductTotal(productId) {
-            const input = document.getElementById(`qty-${productId}`);
-            const product = products.find(p => p.id === productId);
-            const quantity = parseInt(input.value);
-            const total = product.price * quantity;
-            
-            document.getElementById(`total-${productId}`).textContent = total.toLocaleString();
-        }
-        
-        // Savatchaga qo'shish
-        function addToCart(productId) {
-            const product = products.find(p => p.id === productId);
-            const quantityInput = document.getElementById(`qty-${productId}`);
-            const quantity = parseInt(quantityInput.value);
-            
-            const existingItemIndex = cart.findIndex(item => item.id === productId);
-            
-            if (existingItemIndex > -1) {
-                cart[existingItemIndex].quantity += quantity;
-            } else {
-                cart.push({
-                    id: product.id,
-                    name: product.name,
-                    price: product.price,
-                    quantity: quantity,
-                    image: product.images[0]
-                });
-            }
-            
-            updateCart();
-            showNotification(`${product.name} savatchaga qo'shildi!`);
-        }
-        
-        // Savatchani yangilash
-        function updateCart() {
-            // Savatcha badge ni yangilash
-            const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
-            cartBadge.textContent = totalItems;
-            
-            // Savatcha modalini yangilash
-            if (cart.length === 0) {
-                emptyCart.style.display = 'block';
-                cartContent.style.display = 'none';
-            } else {
-                emptyCart.style.display = 'none';
-                cartContent.style.display = 'block';
-                
-                cartItems.innerHTML = '';
-                let subtotal = 0;
-                
-                cart.forEach(item => {
-                    const itemTotal = item.price * item.quantity;
-                    subtotal += itemTotal;
-                    
-                    const row = document.createElement('tr');
-                    row.innerHTML = `
-                        <td>
-                            <div style="display: flex; align-items: center; gap: 15px;">
-                                <div class="cart-item-img">
-                                    <img src="${item.image}" alt="${item.name}">
-                                </div>
-                                <div>
-                                    <div class="cart-item-name">${item.name}</div>
-                                    <div class="cart-item-price">${item.price.toLocaleString()} so'm</div>
-                                </div>
-                            </div>
-                        </td>
-                        <td>${item.price.toLocaleString()} so'm</td>
-                        <td>
-                            <div class="cart-item-qty">
-                                <button class="qty-btn" onclick="updateCartItem(${item.id}, -1)">-</button>
-                                <span style="font-weight: 600; min-width: 30px; text-align: center;">${item.quantity}</span>
-                                <button class="qty-btn" onclick="updateCartItem(${item.id}, 1)">+</button>
-                            </div>
-                        </td>
-                        <td class="cart-item-total">${itemTotal.toLocaleString()} so'm</td>
-                        <td>
-                            <button class="remove-item" onclick="removeFromCart(${item.id})">
-                                <i class="fas fa-trash"></i>
-                            </button>
-                        </td>
-                    `;
-                    cartItems.appendChild(row);
-                });
-                
-                // Narxlarni hisoblash
-                const delivery = 50000;
-                const discount = subtotal * 0.1; // 10% chegirma
-                const total = subtotal + delivery - discount;
-                
-                document.getElementById('subtotal').textContent = subtotal.toLocaleString();
-                document.getElementById('delivery').textContent = delivery.toLocaleString();
-                document.getElementById('discount').textContent = discount.toLocaleString();
-                document.getElementById('cartTotal').textContent = total.toLocaleString();
+            if (confirm(`"${productName}" pardasini sotib olish uchun qo'ng'iroq qilamizmi?\n\nTelefon: ${phoneNumber}`)) {
+                window.location.href = `tel:${phoneNumber}`;
             }
         }
         
-        // Savatchada mahsulot miqdorini o'zgartirish
-        function updateCartItem(productId, change) {
-            const itemIndex = cart.findIndex(item => item.id === productId);
+        // WhatsApp orqali bog'lanish
+        function whatsappProduct(productName) {
+            const phoneNumber = "998901234567";
+            const message = `Salom! Men "Mohina Pardalari" dan "${productName}" pardasini sotib olmoqchiman. Narx va batafsil ma'lumot bering, iltimos.`;
+            const encodedMessage = encodeURIComponent(message);
+            const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
             
-            if (itemIndex > -1) {
-                cart[itemIndex].quantity += change;
-                
-                if (cart[itemIndex].quantity < 1) {
-                    cart.splice(itemIndex, 1);
-                }
-                
-                updateCart();
-            }
+            window.open(whatsappUrl, '_blank');
         }
         
-        // Savatchadan olib tashlash
-        function removeFromCart(productId) {
-            cart = cart.filter(item => item.id !== productId);
-            updateCart();
-        }
-        
-        // Savatchani tozalash
-        function clearCart() {
-            if (cart.length === 0) return;
+        // Telegram orqali bog'lanish (qo'shimcha funksiya)
+        function telegramProduct(productName) {
+            const username = "mohina_pardalari";
+            const message = `Salom! Men "${productName}" pardasini sotib olmoqchiman. Ma'lumot bering.`;
+            const encodedMessage = encodeURIComponent(message);
+            const telegramUrl = `https://t.me/${username}?text=${encodedMessage}`;
             
-            if (confirm('Savatchani tozalashni istaysizmi?')) {
-                cart = [];
-                updateCart();
-                showNotification('Savatcha tozalandi!');
-            }
-        }
-        
-        // Buyurtma berish
-        function checkout() {
-            if (cart.length === 0) {
-                alert('Savatchangiz bo\'sh!');
-                return;
-            }
-            
-            const total = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
-            const discount = total * 0.1;
-            const delivery = 50000;
-            const finalTotal = total + delivery - discount;
-            
-            const orderDetails = cart.map(item => 
-                `${item.name}: ${item.quantity} dona - ${(item.price * item.quantity).toLocaleString()} so'm`
-            ).join('\n');
-            
-            alert(`Buyurtmangiz qabul qilindi!\n\n${orderDetails}\n\nYetkazib berish: 50,000 so'm\nChegirma (10%): ${discount.toLocaleString()} so'm\nUmumiy summa: ${finalTotal.toLocaleString()} so'm\n\nOperator tez orada siz bilan bog'lanadi.`);
-            
-            cart = [];
-            updateCart();
-            cartModal.classList.remove('active');
-        }
-        
-        // Xabarnoma ko'rsatish
-        function showNotification(message) {
-            // Oddiy alert o'rniga chiroyli xabarnoma yaratish mumkin
-            alert(message);
-        }
-        
-        // Tez ko'rish (keyingi bosqichda rivojlantirish mumkin)
-        function quickView(productId) {
-            const product = products.find(p => p.id === productId);
-            alert(`${product.name}\n\nNarxi: ${product.price.toLocaleString()} so'm\n\n${product.description}`);
-        }
-        
-        // Istaklar ro'yxatiga qo'shish (keyingi bosqichda rivojlantirish mumkin)
-        function addToWishlist(productId) {
-            const product = products.find(p => p.id === productId);
-            showNotification(`${product.name} istaklar ro'yxatiga qo'shildi!`);
+            window.open(telegramUrl, '_blank');
         }
         
         // DOM yuklanganda
@@ -1615,99 +1318,37 @@
             // Mahsulotlarni chiqarish
             displayProducts();
             
-            // Savatcha modalini ochish/yopish
-            cartBtn.addEventListener('click', () => {
-                cartModal.classList.add('active');
-            });
-            
-            closeCartModal.addEventListener('click', () => {
-                cartModal.classList.remove('active');
-            });
-            
-            // Profil modalini ochish/yopish
-            accountBtn.addEventListener('click', () => {
-                accountModal.classList.add('active');
-            });
-            
-            closeAccountModal.addEventListener('click', () => {
-                accountModal.classList.remove('active');
-            });
-            
-            // Tashqariga bosganda modallarni yopish
-            window.addEventListener('click', (e) => {
-                if (e.target === cartModal) {
-                    cartModal.classList.remove('active');
-                }
-                if (e.target === accountModal) {
-                    accountModal.classList.remove('active');
-                }
-            });
-            
             // Kategoriya filterlari
             categoryBtns.forEach(btn => {
                 btn.addEventListener('click', () => {
                     categoryBtns.forEach(b => b.classList.remove('active'));
                     btn.classList.add('active');
-                    displayProducts(btn.dataset.category);
+                    displayProducts(btn.dataset.category, searchInput.value);
                 });
             });
             
-            // Ro'yxatdan o'tish formasi
-            registrationForm.addEventListener('submit', (e) => {
-                e.preventDefault();
-                const firstName = document.getElementById('firstName').value;
-                const lastName = document.getElementById('lastName').value;
-                const phone = document.getElementById('phone').value;
-                
-                alert(`Rahmat ${firstName} ${lastName}!\nSizga 10% chegirma berildi.\nTelefon: ${phone}\nOperator tez orada siz bilan bog'lanadi.`);
-                registrationForm.reset();
+            // Qidiruv funksiyasi
+            searchInput.addEventListener('input', () => {
+                const activeCategory = document.querySelector('.category-btn.active');
+                displayProducts(activeCategory.dataset.category, searchInput.value);
             });
             
-            // Savatcha funksiyalari
-            continueShopping.addEventListener('click', () => {
-                cartModal.classList.remove('active');
-            });
-            
-            clearCartBtn.addEventListener('click', clearCart);
-            
-            checkoutBtn.addEventListener('click', checkout);
-            
-            // Profil tablarini almashtirish
-            accountTabs.forEach(tab => {
-                tab.addEventListener('click', () => {
-                    const tabId = tab.dataset.tab;
+            // Nav linklari uchun smooth scroll
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
                     
-                    accountTabs.forEach(t => t.classList.remove('active'));
-                    tab.classList.add('active');
+                    const targetId = this.getAttribute('href');
+                    if (targetId === '#') return;
                     
-                    document.querySelectorAll('.account-form').forEach(form => {
-                        form.classList.remove('active');
-                    });
-                    
-                    document.getElementById(`${tabId}Form`).classList.add('active');
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 80,
+                            behavior: 'smooth'
+                        });
+                    }
                 });
-            });
-            
-            // Kirish formasi
-            loginForm.addEventListener('submit', (e) => {
-                e.preventDefault();
-                const phone = document.getElementById('loginPhone').value;
-                
-                alert(`Tizimga kirildi!\nTelefon: ${phone}\nXush kelibsiz!`);
-                accountModal.classList.remove('active');
-                loginForm.reset();
-            });
-            
-            // Ro'yxatdan o'tish formasi
-            registerForm.addEventListener('submit', (e) => {
-                e.preventDefault();
-                const firstName = document.getElementById('regFirstName').value;
-                const lastName = document.getElementById('regLastName').value;
-                const phone = document.getElementById('regPhone').value;
-                
-                alert(`Muvaffaqiyatli ro'yxatdan o'tdingiz!\nIsm: ${firstName} ${lastName}\nTelefon: ${phone}\nXush kelibsiz!`);
-                accountModal.classList.remove('active');
-                registerForm.reset();
             });
         });
     </script>
