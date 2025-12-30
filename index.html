@@ -1,1 +1,123 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <title>Mohina Pardalari - Zebo va Zamonaviy Pardalar</title>
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Asosiy CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    
+    <!-- Ichki CSS (inline) -->
+    <style>
+        /* Tez yuklanish uchun minimal inline CSS */
+        :root {
+            --primary-color: #9c27b0;
+            --secondary-color: #e1bee7;
+            --accent-color: #ff9800;
+            --light-color: #f3e5f5;
+            --dark-color: #6a1b9a;
+        }
+        
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #fafafa;
+            overflow-x: hidden;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        
+        .loading {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            font-size: 24px;
+            color: var(--primary-color);
+        }
+    </style>
+</head>
+<body>
+    <!-- Loading animatsiyasi -->
+    <div id="loading" class="loading">
+        <i class="fas fa-spinner fa-spin"></i> Yuklanmoqda...
+    </div>
 
+    <!-- Asosiy kontent -->
+    <div id="main-content" style="display: none;">
+        <!-- Header qismi -->
+        <div id="header"></div>
+        
+        <!-- Hero banner -->
+        <div id="hero"></div>
+        
+        <!-- Kategoriyalar -->
+        <div id="categories"></div>
+        
+        <!-- Mahsulotlar -->
+        <div id="products"></div>
+        
+        <!-- Aloqa -->
+        <div id="contact"></div>
+        
+        <!-- Footer -->
+        <div id="footer"></div>
+    </div>
+
+    <!-- JavaScript fayllari -->
+    <script src="js/products.js"></script>
+    <script src="js/main.js"></script>
+    
+    <!-- Tez yuklanish uchun inline JavaScript -->
+    <script>
+        // Qismlarni yuklash
+        async function loadPartials() {
+            try {
+                const partials = [
+                    { id: 'header', url: 'partials/header.html' },
+                    { id: 'hero', url: 'partials/hero.html' },
+                    { id: 'categories', url: 'partials/categories.html' },
+                    { id: 'products', url: 'partials/products.html' },
+                    { id: 'contact', url: 'partials/contact.html' },
+                    { id: 'footer', url: 'partials/footer.html' }
+                ];
+
+                // Barcha qismlarni parallel yuklash
+                const promises = partials.map(async (partial) => {
+                    const response = await fetch(partial.url);
+                    const html = await response.text();
+                    document.getElementById(partial.id).innerHTML = html;
+                });
+
+                await Promise.all(promises);
+                
+                // CSS yuklanganidan keyin asosiy kontentni ko'rsatish
+                document.getElementById('loading').style.display = 'none';
+                document.getElementById('main-content').style.display = 'block';
+                
+                // DOM yuklanganda main.js funksiyalarini ishga tushirish
+                if (window.initApp) {
+                    window.initApp();
+                }
+                
+            } catch (error) {
+                console.error('Qismlarni yuklashda xato:', error);
+                document.getElementById('loading').innerHTML = 
+                    '<p style="color: red;">Xato: Sayt yuklanmadi. Internet aloqasini tekshiring.</p>';
+            }
+        }
+
+        // Hujjat yuklanganda qismlarni yuklash
+        document.addEventListener('DOMContentLoaded', loadPartials);
+    </script>
+</body>
+</html>
