@@ -9,9 +9,9 @@ const productsData = [
         description: "Yorug'likni yumshoq o'tkazadigan, oq rangdagi chiroyli kun pardasi. 100% poliester.",
         features: ["Yumshoq", "Oq rang", "Yuviladi", "Uzoq muddatli"],
         images: [
-            "https://images.unsplash.com/photo-1575414003591-ece8c3d2f0a9?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
-            "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
-            "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+            "https://imagine-public.x.ai/imagine-public/images/9fc77379-f83b-4cf4-8a31-0d9fe8a231a5.png?cache=1&dl=1",
+            "https://imagine-public.x.ai/imagine-public/images/a8650a58-fe94-4bf4-9543-913844b2df52.png?cache=1&dl=1",
+            "https://imagine-public.x.ai/imagine-public/images/70b1e49e-4d45-4547-b2a6-0414910a056f.png?cache=1&dl=1"
         ],
         badge: "Yangi"
     },
@@ -24,9 +24,9 @@ const productsData = [
         description: "To'liq qorong'ulik yaratadigan, qalin va sifatli tun pardasi. Issiqlik saqlaydi.",
         features: ["Qalin", "Qorong'ulik", "Issiq saqlaydi", "Shovqin kamaytiradi"],
         images: [
-            "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
-            "https://images.unsplash.com/photo-1598300042247-d088f8ab3a91?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
-            "https://images.unsplash.com/photo-1503602642458-232111445657?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+            "https://imagine-public.x.ai/imagine-public/images/9fc77379-f83b-4cf4-8a31-0d9fe8a231a5.png?cache=1&dl=1",
+            "https://imagine-public.x.ai/imagine-public/images/a8650a58-fe94-4bf4-9543-913844b2df52.png?cache=1&dl=1",
+            "https://imagine-public.x.ai/imagine-public/images/70b1e49e-4d45-4547-b2a6-0414910a056f.png?cache=1&dl=1"
         ],
         badge: "30% Chegirma"
     },
@@ -39,9 +39,9 @@ const productsData = [
         description: "Gul naqshli, interyerga chiroy bag'ishlovchi zebo parda. Ipak mato.",
         features: ["Gul naqsh", "Ipak mato", "Zebo", "Yugori sifat"],
         images: [
-            "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
-            "https://images.unsplash.com/photo-1540574163026-643ea20ade25?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
-            "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+            "https://imagine-public.x.ai/imagine-public/images/9fc77379-f83b-4cf4-8a31-0d9fe8a231a5.png?cache=1&dl=1",
+            "https://imagine-public.x.ai/imagine-public/images/a8650a58-fe94-4bf4-9543-913844b2df52.png?cache=1&dl=1",
+            "https://imagine-public.x.ai/imagine-public/images/70b1e49e-4d45-4547-b2a6-0414910a056f.png?cache=1&dl=1"
         ],
         badge: "Yangi"
     },
@@ -54,9 +54,9 @@ const productsData = [
         description: "Zamonaviy dizayndagi, o'zgaruvchan rulon parda. O'rnatish qulay.",
         features: ["Rulon", "O'zgaruvchan", "Zamonaviy", "Qulay"],
         images: [
-            "https://images.unsplash.com/photo-1575414003591-ece8c3d2f0a9?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
-            "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
-            "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+            "https://imagine-public.x.ai/imagine-public/images/9fc77379-f83b-4cf4-8a31-0d9fe8a231a5.png?cache=1&dl=1",
+            "https://imagine-public.x.ai/imagine-public/images/a8650a58-fe94-4bf4-9543-913844b2df52.png?cache=1&dl=1",
+            "https://imagine-public.x.ai/imagine-public/images/70b1e49e-4d45-4547-b2a6-0414910a056f.png?cache=1&dl=1"
         ],
         badge: null
     },
@@ -69,9 +69,9 @@ const productsData = [
         description: "Klassik roman pardasi, jigarrang rang. Nafis va uyg'un dizayn.",
         features: ["Roman", "Jigarrang", "Klassik", "Nafis"],
         images: [
-            "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
-            "https://images.unsplash.com/photo-1598300042247-d088f8ab3a91?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
-            "https://images.unsplash.com/photo-1503602642458-232111445657?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+            "https://imagine-public.x.ai/imagine-public/images/9fc77379-f83b-4cf4-8a31-0d9fe8a231a5.png?cache=1&dl=1",
+            "https://imagine-public.x.ai/imagine-public/images/a8650a58-fe94-4bf4-9543-913844b2df52.png?cache=1&dl=1",
+            "https://imagine-public.x.ai/imagine-public/images/70b1e49e-4d45-4547-b2a6-0414910a056f.png?cache=1&dl=1"
         ],
         badge: "Sotuvda"
     },
@@ -84,9 +84,9 @@ const productsData = [
         description: "Ikki qatlamli kun pardasi. Ichki qatlam yorug'likni sochadi.",
         features: ["2 qatlamli", "Yorug'lik sochadi", "Funksional", "Zamonaviy"],
         images: [
-            "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
-            "https://images.unsplash.com/photo-1540574163026-643ea20ade25?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
-            "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+            "https://imagine-public.x.ai/imagine-public/images/9fc77379-f83b-4cf4-8a31-0d9fe8a231a5.png?cache=1&dl=1",
+            "https://imagine-public.x.ai/imagine-public/images/a8650a58-fe94-4bf4-9543-913844b2df52.png?cache=1&dl=1",
+            "https://imagine-public.x.ai/imagine-public/images/70b1e49e-4d45-4547-b2a6-0414910a056f.png?cache=1&dl=1"
         ],
         badge: "20% Chegirma"
     },
@@ -99,9 +99,9 @@ const productsData = [
         description: "Bolalar xonasi uchun tun pardasi. Sevimli multfilm qahramonlari naqshi.",
         features: ["Bolalar uchun", "Multfilm naqsh", "Qalin", "Xavfsiz"],
         images: [
-            "https://images.unsplash.com/photo-1575414003591-ece8c3d2f0a9?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
-            "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
-            "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+            "https://imagine-public.x.ai/imagine-public/images/9fc77379-f83b-4cf4-8a31-0d9fe8a231a5.png?cache=1&dl=1",
+            "https://imagine-public.x.ai/imagine-public/images/a8650a58-fe94-4bf4-9543-913844b2df52.png?cache=1&dl=1",
+            "https://imagine-public.x.ai/imagine-public/images/70b1e49e-4d45-4547-b2a6-0414910a056f.png?cache=1&dl=1"
         ],
         badge: "Yangi"
     },
@@ -114,9 +114,9 @@ const productsData = [
         description: "Ofis va biznes markazlari uchun zamonaviy rulon parda. Professional ko'rinish.",
         features: ["Ofis uchun", "Professional", "Qulay", "O'rnatish oson"],
         images: [
-            "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
-            "https://images.unsplash.com/photo-1598300042247-d088f8ab3a91?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
-            "https://images.unsplash.com/photo-1503602642458-232111445657?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+            "https://imagine-public.x.ai/imagine-public/images/9fc77379-f83b-4cf4-8a31-0d9fe8a231a5.png?cache=1&dl=1",
+            "https://imagine-public.x.ai/imagine-public/images/a8650a58-fe94-4bf4-9543-913844b2df52.png?cache=1&dl=1",
+            "https://imagine-public.x.ai/imagine-public/images/70b1e49e-4d45-4547-b2a6-0414910a056f.png?cache=1&dl=1"
         ],
         badge: null
     },
@@ -129,9 +129,9 @@ const productsData = [
         description: "Geometrik naqshli, zamonaviy zebo parda. Turli rang kombinatsiyalari.",
         features: ["Geometrik naqsh", "Zamonaviy", "Turli rang", "Yuqori sifat"],
         images: [
-            "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
-            "https://images.unsplash.com/photo-1540574163026-643ea20ade25?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
-            "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+            "https://imagine-public.x.ai/imagine-public/images/9fc77379-f83b-4cf4-8a31-0d9fe8a231a5.png?cache=1&dl=1",
+            "https://imagine-public.x.ai/imagine-public/images/a8650a58-fe94-4bf4-9543-913844b2df52.png?cache=1&dl=1",
+            "https://imagine-public.x.ai/imagine-public/images/70b1e49e-4d45-4547-b2a6-0414910a056f.png?cache=1&dl=1"
         ],
         badge: "Sotuvda"
     },
@@ -144,9 +144,9 @@ const productsData = [
         description: "Luxury roman pardasi, oltin rangdagi. Interyerga hashamat bag'ishlaydi.",
         features: ["Luxury", "Oltin rang", "Hashamatli", "Premium"],
         images: [
-            "https://images.unsplash.com/photo-1575414003591-ece8c3d2f0a9?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
-            "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
-            "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+            "https://imagine-public.x.ai/imagine-public/images/9fc77379-f83b-4cf4-8a31-0d9fe8a231a5.png?cache=1&dl=1",
+            "https://imagine-public.x.ai/imagine-public/images/a8650a58-fe94-4bf4-9543-913844b2df52.png?cache=1&dl=1",
+            "https://imagine-public.x.ai/imagine-public/images/70b1e49e-4d45-4547-b2a6-0414910a056f.png?cache=1&dl=1"
         ],
         badge: "15% Chegirma"
     }
