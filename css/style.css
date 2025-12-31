@@ -1,53 +1,20 @@
-/* Asosiy CSS fayli */
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-
-:root {
-    --primary-color: #9c27b0;
-    --secondary-color: #e1bee7;
-    --accent-color: #ff9800;
-    --light-color: #f3e5f5;
-    --dark-color: #6a1b9a;
-    --text-color: #333;
-    --shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-    --transition: all 0.3s ease;
-}
-
-body {
-    background-color: #fafafa;
-    color: var(--text-color);
-    line-height: 1.6;
-    overflow-x: visible;
-    width: 100%;
-    min-height: 100vh;
-}
-
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 15px;
-    width: 100%;
-}
-
-/* ===== HEADER STYLES ===== */
+/* ===== HEADER STYLES - IMPROVED ===== */
 .header {
     background: linear-gradient(135deg, var(--dark-color), var(--primary-color));
     color: white;
     position: sticky;
     top: 0;
-    z-index: 100;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
     width: 100%;
+    max-height: 140px; /* Maksimal balandlik */
+    overflow: hidden;
 }
 
 .header-top {
-    padding: 12px 0;
+    padding: 8px 0; /* Qisqartirildi */
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    min-height: 50px;
 }
 
 .header-top .container {
@@ -55,13 +22,13 @@ body {
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
-    gap: 10px;
+    gap: 8px; /* Qisqartirildi */
 }
 
 .logo {
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 8px; /* Qisqartirildi */
     text-decoration: none;
     color: white;
     flex: 1;
@@ -69,57 +36,59 @@ body {
 }
 
 .logo-icon {
-    font-size: 28px;
+    font-size: 24px; /* Kichiklashtirildi */
     color: #ffeb3b;
     flex-shrink: 0;
 }
 
 .logo-text h1 {
-    font-size: clamp(16px, 4vw, 24px);
+    font-size: clamp(14px, 3.5vw, 18px); /* Kichiklashtirildi */
     font-weight: 700;
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
     line-height: 1.2;
+    margin: 0;
 }
 
 .logo-text p {
-    font-size: clamp(10px, 2.5vw, 12px);
+    font-size: clamp(9px, 2.2vw, 11px); /* Kichiklashtirildi */
     opacity: 0.9;
-    line-height: 1.3;
+    line-height: 1.2;
+    margin: 2px 0 0 0;
 }
 
+/* Header contact - Kichiklashtirish */
 .header-contact {
     display: flex;
     align-items: center;
     flex-wrap: wrap;
-    gap: 10px;
-    flex: 1;
+    gap: 8px; /* Qisqartirildi */
     justify-content: flex-end;
-    min-width: 0;
+    flex: 1;
 }
 
 .contact-item {
     display: flex;
     align-items: center;
-    gap: 6px;
-    font-size: clamp(12px, 3vw, 14px);
+    gap: 4px; /* Qisqartirildi */
+    font-size: clamp(10px, 2.5vw, 12px); /* Kichiklashtirildi */
     white-space: nowrap;
 }
 
 .contact-item i {
     color: #ffeb3b;
-    font-size: clamp(14px, 3.5vw, 16px);
+    font-size: clamp(12px, 3vw, 14px); /* Kichiklashtirildi */
     flex-shrink: 0;
 }
 
 .social-links {
     display: flex;
-    gap: 8px;
-    margin-left: 10px;
+    gap: 6px; /* Qisqartirildi */
+    margin-left: 8px;
 }
 
 .social-link {
-    width: clamp(30px, 8vw, 36px);
-    height: clamp(30px, 8vw, 36px);
+    width: clamp(26px, 7vw, 32px); /* Kichiklashtirildi */
+    height: clamp(26px, 7vw, 32px); /* Kichiklashtirildi */
     background-color: rgba(255, 255, 255, 0.1);
     border-radius: 50%;
     display: flex;
@@ -131,17 +100,17 @@ body {
     flex-shrink: 0;
 }
 
-.social-link:hover {
-    background-color: #ffeb3b;
-    color: var(--dark-color);
-    transform: translateY(-3px);
+.social-link i {
+    font-size: clamp(12px, 3vw, 14px); /* Kichiklashtirildi */
 }
 
-/* Navigation */
+/* Navigation - Kichiklashtirish va Scroll yo'q */
 .nav {
     background-color: rgba(0, 0, 0, 0.15);
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
+    overflow: hidden; /* Scroll yo'q */
+    height: 48px; /* Fixed balandlik */
+    display: flex;
+    align-items: center;
 }
 
 .nav .container {
@@ -149,7 +118,8 @@ body {
     justify-content: space-between;
     align-items: center;
     padding: 0;
-    min-width: max-content;
+    height: 100%;
+    overflow: visible; /* Scroll yo'q */
 }
 
 .nav-links {
@@ -157,106 +127,91 @@ body {
     list-style: none;
     padding: 0;
     margin: 0;
-    min-width: max-content;
+    height: 100%;
+    align-items: center;
+    overflow: visible;
 }
 
 .nav-links a {
     color: white;
     text-decoration: none;
-    padding: 12px 15px;
+    padding: 12px 10px; /* Qisqartirildi */
     font-weight: 600;
     display: flex;
     align-items: center;
-    gap: 6px;
+    gap: 5px; /* Qisqartirildi */
     transition: var(--transition);
     position: relative;
-    font-size: clamp(12px, 3vw, 14px);
+    font-size: clamp(11px, 2.8vw, 13px); /* Kichiklashtirildi */
     white-space: nowrap;
+    height: 100%;
+    align-items: center;
 }
 
-.nav-links a:hover,
-.nav-links a.active {
-    background-color: rgba(255, 255, 255, 0.1);
+.nav-links a i {
+    font-size: clamp(12px, 3vw, 14px); /* Kichiklashtirildi */
 }
 
-.nav-links a.active::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 3px;
-    background-color: #ffeb3b;
-}
-
+/* Search box - Kichiklashtirish */
 .search-box {
     position: relative;
-    margin: 0 15px;
-    min-width: 150px;
+    margin: 0 10px;
+    min-width: 120px; /* Kichiklashtirildi */
     flex-shrink: 1;
+    height: 32px; /* Fixed height */
 }
 
 .search-box input {
-    padding: 8px 15px 8px 35px;
+    padding: 6px 12px 6px 30px; /* Qisqartirildi */
     border: none;
-    border-radius: 20px;
+    border-radius: 16px; /* Kichik radius */
     width: 100%;
     background-color: rgba(255, 255, 255, 0.9);
-    font-size: 14px;
-    max-width: 250px;
+    font-size: 12px; /* Kichiklashtirildi */
+    height: 100%;
+    max-width: 180px; /* Kichiklashtirildi */
 }
 
 .search-box i {
     position: absolute;
-    left: 12px;
+    left: 10px;
     top: 50%;
     transform: translateY(-50%);
     color: var(--dark-color);
-    font-size: 14px;
+    font-size: 12px; /* Kichiklashtirildi */
 }
 
-/* ===== HERO BANNER ===== */
+/* ===== HERO BANNER - IMPROVED ===== */
 .hero-banner {
     background: linear-gradient(rgba(106, 27, 154, 0.9), rgba(156, 39, 176, 0.9)), url('https://images.unsplash.com/photo-1583847268964-b28dc8f51f92?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80');
     background-size: cover;
     background-position: center;
     color: white;
-    padding: clamp(40px, 10vw, 80px) 0;
+    padding: clamp(30px, 8vw, 60px) 0; /* Qisqartirildi */
     text-align: center;
-    margin-bottom: clamp(30px, 5vw, 60px);
-}
-
-.hero-content {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 0 10px;
+    margin-bottom: clamp(20px, 4vw, 40px); /* Qisqartirildi */
 }
 
 .hero-content h2 {
-    font-size: clamp(24px, 6vw, 40px);
-    margin-bottom: 15px;
+    font-size: clamp(20px, 5vw, 32px); /* Kichiklashtirildi */
+    margin-bottom: 12px; /* Qisqartirildi */
     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
     line-height: 1.3;
 }
 
 .hero-content p {
-    font-size: clamp(14px, 3.5vw, 18px);
-    margin-bottom: 25px;
+    font-size: clamp(13px, 3.2vw, 16px); /* Kichiklashtirildi */
+    margin-bottom: 20px; /* Qisqartirildi */
     opacity: 0.95;
-    line-height: 1.5;
-}
-
-.highlight {
-    color: #ffeb3b;
-    font-weight: 700;
+    line-height: 1.4;
 }
 
 .cta-box {
     display: flex;
     flex-direction: column;
-    gap: 15px;
+    gap: 12px; /* Qisqartirildi */
     align-items: center;
-    margin-top: 30px;
+    margin-top: 20px; /* Qisqartirildi */
     width: 100%;
 }
 
@@ -264,52 +219,36 @@ body {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    gap: 8px;
+    gap: 6px; /* Qisqartirildi */
     background-color: #ffeb3b;
     color: var(--dark-color);
     border: none;
-    padding: 12px 20px;
-    border-radius: 8px;
-    font-size: clamp(14px, 3.5vw, 16px);
+    padding: 10px 16px; /* Qisqartirildi */
+    border-radius: 6px;
+    font-size: clamp(12px, 3vw, 14px); /* Kichiklashtirildi */
     font-weight: 600;
     cursor: pointer;
     transition: var(--transition);
     text-decoration: none;
     text-transform: uppercase;
-    letter-spacing: 0.5px;
+    letter-spacing: 0.3px; /* Qisqartirildi */
     width: 100%;
-    max-width: 300px;
+    max-width: 250px; /* Kichiklashtirildi */
 }
 
-.btn:hover {
-    background-color: white;
-    transform: translateY(-3px);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-}
-
-.btn-whatsapp {
-    background-color: #25d366;
-    color: white;
-}
-
-.btn-telegram {
-    background-color: #0088cc;
-    color: white;
-}
-
-/* ===== CATEGORIES ===== */
+/* ===== CATEGORIES - IMPROVED ===== */
 .categories-section {
-    padding: clamp(30px, 5vw, 50px) 0;
+    padding: clamp(25px, 4vw, 40px) 0; /* Qisqartirildi */
     background-color: white;
 }
 
 .section-title {
-    font-size: clamp(24px, 6vw, 32px);
+    font-size: clamp(20px, 5vw, 28px); /* Kichiklashtirildi */
     color: var(--dark-color);
-    margin-bottom: 25px;
+    margin-bottom: 20px; /* Qisqartirildi */
     text-align: center;
     position: relative;
-    padding-bottom: 12px;
+    padding-bottom: 10px; /* Qisqartirildi */
     line-height: 1.3;
 }
 
@@ -319,8 +258,8 @@ body {
     bottom: 0;
     left: 50%;
     transform: translateX(-50%);
-    width: 80px;
-    height: 4px;
+    width: 60px; /* Qisqartirildi */
+    height: 3px; /* Qisqartirildi */
     background-color: var(--accent-color);
     border-radius: 2px;
 }
@@ -329,112 +268,106 @@ body {
     text-align: center;
     color: #666;
     max-width: 700px;
-    margin: 0 auto 40px;
-    font-size: clamp(14px, 3.5vw, 16px);
+    margin: 0 auto 30px; /* Qisqartirildi */
+    font-size: clamp(13px, 3.2vw, 15px); /* Kichiklashtirildi */
     line-height: 1.5;
-    padding: 0 15px;
+    padding: 0 10px; /* Qisqartirildi */
 }
 
 .categories-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    gap: 20px;
-    margin-bottom: 40px;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); /* Kichiklashtirildi */
+    gap: 15px; /* Qisqartirildi */
+    margin-bottom: 30px; /* Qisqartirildi */
 }
 
 .category-card {
     background-color: white;
-    border-radius: 10px;
+    border-radius: 8px; /* Kichiklashtirildi */
     overflow: hidden;
-    box-shadow: var(--shadow);
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08); /* Kichiklashtirildi */
     transition: var(--transition);
     text-align: center;
-    padding: 20px 15px;
-    border: 2px solid transparent;
+    padding: 15px 12px; /* Qisqartirildi */
+    border: 1px solid #eee; /* Kichiklashtirildi */
 }
 
 .category-card:hover {
-    transform: translateY(-10px);
+    transform: translateY(-5px); /* Kichiklashtirildi */
     border-color: var(--primary-color);
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12); /* Kichiklashtirildi */
 }
 
 .category-icon {
-    font-size: 40px;
+    font-size: 32px; /* Kichiklashtirildi */
     color: var(--primary-color);
-    margin-bottom: 15px;
+    margin-bottom: 12px; /* Qisqartirildi */
 }
 
 .category-card h3 {
-    font-size: clamp(16px, 4vw, 20px);
+    font-size: clamp(14px, 3.5vw, 16px); /* Kichiklashtirildi */
     color: var(--dark-color);
-    margin-bottom: 8px;
+    margin-bottom: 6px; /* Qisqartirildi */
     line-height: 1.3;
 }
 
 .category-card p {
     color: #666;
-    font-size: clamp(12px, 3vw, 14px);
+    font-size: clamp(11px, 2.8vw, 13px); /* Kichiklashtirildi */
     line-height: 1.4;
 }
 
-/* ===== PRODUCTS ===== */
+/* ===== PRODUCTS - IMPROVED ===== */
 .products-section {
-    padding: clamp(40px, 5vw, 60px) 0;
+    padding: clamp(30px, 5vw, 50px) 0; /* Qisqartirildi */
     background-color: #f9f9f9;
 }
 
 .category-filter {
     display: flex;
     flex-wrap: wrap;
-    gap: 10px;
-    margin-bottom: 30px;
+    gap: 8px; /* Qisqartirildi */
+    margin-bottom: 25px; /* Qisqartirildi */
     justify-content: center;
     padding: 0 5px;
 }
 
 .category-btn {
-    padding: 10px 20px;
+    padding: 8px 16px; /* Qisqartirildi */
     background-color: white;
-    border: 2px solid var(--secondary-color);
-    border-radius: 25px;
+    border: 1px solid var(--secondary-color); /* Kichiklashtirildi */
+    border-radius: 20px; /* Kichiklashtirildi */
     font-weight: 600;
     cursor: pointer;
     transition: var(--transition);
     color: var(--dark-color);
-    font-size: clamp(12px, 3vw, 14px);
+    font-size: clamp(11px, 2.8vw, 13px); /* Kichiklashtirildi */
     white-space: nowrap;
-}
-
-.category-btn.active {
-    background-color: var(--primary-color);
-    color: white;
-    border-color: var(--primary-color);
 }
 
 .products-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-    gap: 25px;
-    margin-bottom: 40px;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); /* Kichiklashtirildi */
+    gap: 20px; /* Qisqartirildi */
+    margin-bottom: 30px; /* Qisqartirildi */
 }
 
 .product-card {
     background-color: white;
-    border-radius: 12px;
+    border-radius: 10px; /* Kichiklashtirildi */
     overflow: hidden;
-    box-shadow: var(--shadow);
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08); /* Kichiklashtirildi */
     transition: var(--transition);
     border: 1px solid #eee;
 }
 
 .product-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    transform: translateY(-5px); /* Kichiklashtirildi */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12); /* Kichiklashtirildi */
 }
 
 .product-image {
-    height: 200px;
+    height: 180px; /* Kichiklashtirildi */
     position: relative;
     overflow: hidden;
 }
@@ -460,211 +393,190 @@ body {
     background-color: rgba(0, 0, 0, 0.6);
     color: white;
     border: none;
-    width: 35px;
-    height: 35px;
+    width: 30px; /* Kichiklashtirildi */
+    height: 30px; /* Kichiklashtirildi */
     border-radius: 50%;
     cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 16px;
+    font-size: 14px; /* Kichiklashtirildi */
     transition: var(--transition);
-    opacity: 0.7;
+    opacity: 0.5; /* Biraz transparent */
 }
 
 .product-card:hover .img-nav {
-    opacity: 1;
-}
-
-.img-nav:hover {
-    background-color: rgba(0, 0, 0, 0.9);
+    opacity: 0.8; /* Ko'proq ko'rinishi */
 }
 
 .img-prev {
-    left: 10px;
+    left: 8px; /* Qisqartirildi */
 }
 
 .img-next {
-    right: 10px;
+    right: 8px; /* Qisqartirildi */
 }
 
 .product-badge {
     position: absolute;
-    top: 10px;
-    right: 10px;
+    top: 8px; /* Qisqartirildi */
+    right: 8px; /* Qisqartirildi */
     background-color: var(--accent-color);
     color: white;
-    padding: 5px 10px;
-    border-radius: 15px;
-    font-size: 11px;
+    padding: 4px 8px; /* Qisqartirildi */
+    border-radius: 12px; /* Kichiklashtirildi */
+    font-size: 10px; /* Kichiklashtirildi */
     font-weight: 700;
     z-index: 2;
 }
 
 .product-info {
-    padding: 20px;
+    padding: 15px; /* Qisqartirildi */
 }
 
 .product-title {
-    font-size: clamp(16px, 4vw, 18px);
+    font-size: clamp(14px, 3.5vw, 16px); /* Kichiklashtirildi */
     font-weight: 700;
     color: var(--dark-color);
-    margin-bottom: 8px;
+    margin-bottom: 6px; /* Qisqartirildi */
     line-height: 1.3;
+    min-height: auto; /* O'chirildi */
 }
 
 .product-price {
-    font-size: clamp(18px, 4.5vw, 22px);
+    font-size: clamp(16px, 4vw, 18px); /* Kichiklashtirildi */
     font-weight: 800;
     color: var(--primary-color);
-    margin-bottom: 12px;
+    margin-bottom: 10px; /* Qisqartirildi */
 }
 
 .product-price .old-price {
-    font-size: clamp(14px, 3.5vw, 16px);
+    font-size: clamp(13px, 3.2vw, 14px); /* Kichiklashtirildi */
     color: #999;
     text-decoration: line-through;
-    margin-right: 8px;
+    margin-right: 6px; /* Qisqartirildi */
 }
 
 .product-description {
     color: #666;
-    margin-bottom: 15px;
-    font-size: clamp(13px, 3.2vw, 14px);
-    line-height: 1.5;
+    margin-bottom: 12px; /* Qisqartirildi */
+    font-size: clamp(12px, 3vw, 13px); /* Kichiklashtirildi */
+    line-height: 1.4;
+    min-height: auto; /* O'chirildi */
 }
 
 .product-features {
     display: flex;
     flex-wrap: wrap;
-    gap: 8px;
-    margin-bottom: 20px;
+    gap: 6px; /* Qisqartirildi */
+    margin-bottom: 15px; /* Qisqartirildi */
 }
 
 .feature-tag {
     background-color: var(--light-color);
-    padding: 5px 10px;
-    border-radius: 15px;
-    font-size: 11px;
+    padding: 4px 8px; /* Qisqartirildi */
+    border-radius: 12px; /* Kichiklashtirildi */
+    font-size: 10px; /* Kichiklashtirildi */
     color: var(--dark-color);
 }
 
 .product-actions {
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 8px; /* Qisqartirildi */
 }
 
 .action-btn {
     flex: 1;
-    padding: 12px;
-    border-radius: 8px;
+    padding: 10px; /* Qisqartirildi */
+    border-radius: 6px; /* Kichiklashtirildi */
     font-weight: 600;
     cursor: pointer;
     transition: var(--transition);
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 8px;
-    border: 2px solid transparent;
-    font-size: clamp(13px, 3.2vw, 14px);
+    gap: 6px; /* Qisqartirildi */
+    border: 1px solid transparent; /* Kichiklashtirildi */
+    font-size: clamp(12px, 3vw, 13px); /* Kichiklashtirildi */
 }
 
-.action-call {
-    background-color: var(--primary-color);
-    color: white;
-}
-
-.action-call:hover {
-    background-color: var(--dark-color);
-    transform: translateY(-3px);
-}
-
-.action-whatsapp {
-    background-color: #25d366;
-    color: white;
-}
-
-.action-whatsapp:hover {
-    background-color: #1da851;
-    transform: translateY(-3px);
-}
-
-/* ===== CONTACT ===== */
+/* ===== CONTACT - IMPROVED ===== */
 .contact-section {
-    padding: clamp(40px, 8vw, 60px) 0;
+    padding: clamp(30px, 6vw, 50px) 0; /* Qisqartirildi */
     background-color: white;
     text-align: center;
 }
 
 .contact-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 25px;
-    margin-top: 40px;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Kichiklashtirildi */
+    gap: 20px; /* Qisqartirildi */
+    margin-top: 30px; /* Qisqartirildi */
 }
 
 .contact-card {
     background-color: var(--light-color);
-    padding: 25px 20px;
-    border-radius: 12px;
+    padding: 20px 15px; /* Qisqartirildi */
+    border-radius: 10px; /* Kichiklashtirildi */
     transition: var(--transition);
 }
 
 .contact-card:hover {
-    transform: translateY(-10px);
-    box-shadow: var(--shadow);
+    transform: translateY(-5px); /* Kichiklashtirildi */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); /* Kichiklashtirildi */
 }
 
 .contact-icon {
-    font-size: 40px;
+    font-size: 32px; /* Kichiklashtirildi */
     color: var(--primary-color);
-    margin-bottom: 20px;
+    margin-bottom: 15px; /* Qisqartirildi */
 }
 
 .contact-card h3 {
-    font-size: clamp(18px, 4.5vw, 20px);
+    font-size: clamp(16px, 4vw, 18px); /* Kichiklashtirildi */
     color: var(--dark-color);
-    margin-bottom: 12px;
+    margin-bottom: 10px; /* Qisqartirildi */
     line-height: 1.3;
 }
 
 .contact-card p {
     color: #666;
-    margin-bottom: 15px;
-    font-size: clamp(13px, 3.2vw, 14px);
-    line-height: 1.5;
+    margin-bottom: 12px; /* Qisqartirildi */
+    font-size: clamp(12px, 3vw, 13px); /* Kichiklashtirildi */
+    line-height: 1.4;
 }
 
 .contact-card a {
     color: var(--primary-color);
     text-decoration: none;
     font-weight: 600;
-    font-size: clamp(14px, 3.5vw, 16px);
+    font-size: clamp(13px, 3.2vw, 14px); /* Kichiklashtirildi */
     display: block;
-    margin-top: 10px;
+    margin-top: 8px; /* Qisqartirildi */
+    word-break: break-all;
 }
 
-/* ===== FOOTER ===== */
+/* ===== FOOTER - IMPROVED ===== */
 .footer {
     background: linear-gradient(135deg, var(--dark-color), #4a148c);
     color: white;
-    padding: clamp(40px, 8vw, 60px) 0 30px;
+    padding: clamp(30px, 6vw, 50px) 0 25px; /* Qisqartirildi */
 }
 
 .footer-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 30px;
-    margin-bottom: 30px;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); /* Kichiklashtirildi */
+    gap: 25px; /* Qisqartirildi */
+    margin-bottom: 25px; /* Qisqartirildi */
 }
 
 .footer-col h4 {
-    font-size: clamp(18px, 4.5vw, 20px);
-    margin-bottom: 20px;
+    font-size: clamp(16px, 4vw, 18px); /* Kichiklashtirildi */
+    margin-bottom: 15px; /* Qisqartirildi */
     color: #ffeb3b;
     position: relative;
-    padding-bottom: 10px;
+    padding-bottom: 8px; /* Qisqartirildi */
     line-height: 1.3;
 }
 
@@ -673,281 +585,185 @@ body {
     position: absolute;
     bottom: 0;
     left: 0;
-    width: 50px;
-    height: 3px;
+    width: 40px; /* Qisqartirildi */
+    height: 2px; /* Qisqartirildi */
     background-color: white;
 }
 
-.footer-col ul {
-    list-style: none;
-    padding: 0;
-}
-
 .footer-col ul li {
-    margin-bottom: 10px;
+    margin-bottom: 8px; /* Qisqartirildi */
 }
 
 .footer-col ul li a {
-    color: #ddd;
-    text-decoration: none;
-    transition: var(--transition);
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    font-size: clamp(13px, 3.2vw, 14px);
-    line-height: 1.4;
-}
-
-.footer-col ul li a:hover {
-    color: #ffeb3b;
-    transform: translateX(5px);
+    font-size: clamp(12px, 3vw, 13px); /* Kichiklashtirildi */
+    line-height: 1.3;
 }
 
 .footer-bottom {
-    text-align: center;
-    padding-top: 25px;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
-    color: #bbb;
-    font-size: clamp(12px, 3vw, 13px);
-    line-height: 1.5;
+    padding-top: 20px; /* Qisqartirildi */
+    font-size: clamp(11px, 2.8vw, 12px); /* Kichiklashtirildi */
+    line-height: 1.4;
 }
 
 .footer-social {
-    display: flex;
-    justify-content: center;
-    gap: 12px;
-    margin-top: 20px;
+    gap: 10px; /* Qisqartirildi */
+    margin-top: 15px; /* Qisqartirildi */
 }
 
-/* ===== RESPONSIVE DESIGN ===== */
+/* ===== RESPONSIVE DESIGN - IMPROVED ===== */
 @media (min-width: 769px) {
-    .header-top .container {
-        flex-wrap: nowrap;
-    }
-    
+    /* Desktop uchun o'lchamlar */
     .logo-text h1 {
-        font-size: 28px;
+        font-size: 22px; /* Kichiklashtirildi */
     }
     
     .logo-text p {
-        font-size: 13px;
+        font-size: 12px; /* Kichiklashtirildi */
     }
     
     .contact-item {
-        font-size: 15px;
+        font-size: 13px; /* Kichiklashtirildi */
     }
     
     .nav-links a {
-        padding: 18px 25px;
-        font-size: 16px;
+        padding: 14px 20px; /* Qisqartirildi */
+        font-size: 14px; /* Kichiklashtirildi */
     }
     
     .hero-content h2 {
-        font-size: 46px;
+        font-size: 36px; /* Kichiklashtirildi */
     }
     
     .hero-content p {
-        font-size: 20px;
-    }
-    
-    .cta-box {
-        flex-direction: row;
-        justify-content: center;
+        font-size: 18px; /* Kichiklashtirildi */
     }
     
     .btn {
-        width: auto;
-        padding: 16px 35px;
+        padding: 12px 24px; /* Qisqartirildi */
+        font-size: 14px; /* Kichiklashtirildi */
     }
     
     .section-title {
-        font-size: 36px;
+        font-size: 32px; /* Kichiklashtirildi */
     }
     
     .section-subtitle {
-        font-size: 18px;
-    }
-    
-    .category-card {
-        padding: 25px 20px;
-    }
-    
-    .category-icon {
-        font-size: 50px;
-    }
-    
-    .category-card h3 {
-        font-size: 22px;
-    }
-    
-    .products-grid {
-        grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-        gap: 35px;
-    }
-    
-    .product-image {
-        height: 250px;
-    }
-    
-    .product-title {
-        font-size: 22px;
-    }
-    
-    .product-price {
-        font-size: 28px;
-    }
-    
-    .product-actions {
-        flex-direction: row;
-    }
-    
-    .action-btn {
-        font-size: 16px;
-        padding: 14px;
-    }
-    
-    .contact-grid {
-        gap: 40px;
-    }
-    
-    .contact-card {
-        padding: 40px 30px;
-    }
-    
-    .contact-icon {
-        font-size: 50px;
+        font-size: 16px; /* Kichiklashtirildi */
     }
 }
 
+/* KICHIK MOBIL EKRANLAR UCHUN MAXSUS STILLAR */
 @media (max-width: 480px) {
     .header-top .container {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 15px;
-    }
-    
-    .header-contact {
-        width: 100%;
-        justify-content: flex-start;
+        flex-direction: row; /* Vertikal emas, gorizontal */
+        align-items: center;
+        gap: 5px;
     }
     
     .logo {
-        width: 100%;
+        flex: none; /* Fixed width */
+        min-width: 150px;
     }
     
-    .nav .container {
+    .header-contact {
         flex-direction: column;
-        padding: 10px 0;
+        align-items: flex-end;
+        gap: 3px;
     }
     
-    .nav-links {
-        width: 100%;
-        justify-content: center;
+    .contact-item {
+        font-size: 10px;
+    }
+    
+    .social-links {
+        margin-left: 0;
+        gap: 4px;
+    }
+    
+    .social-link {
+        width: 24px;
+        height: 24px;
+    }
+    
+    .nav-links a {
+        padding: 10px 8px;
+        font-size: 11px;
     }
     
     .search-box {
-        width: 100%;
-        margin: 10px 0;
-        max-width: 100%;
+        min-width: 100px;
+        height: 28px;
     }
     
     .search-box input {
-        max-width: 100%;
-    }
-    
-    .categories-grid {
-        grid-template-columns: 1fr;
-    }
-    
-    .products-grid {
-        grid-template-columns: 1fr;
-    }
-    
-    .category-filter {
-        justify-content: flex-start;
-        overflow-x: auto;
-        padding-bottom: 10px;
+        font-size: 11px;
+        padding-left: 28px;
     }
     
     .category-btn {
-        flex-shrink: 0;
+        padding: 6px 12px;
+        font-size: 11px;
     }
     
-    .footer-grid {
-        grid-template-columns: 1fr;
-    }
-}
-
-@media (min-width: 481px) and (max-width: 768px) {
-    .categories-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-    
+    .categories-grid,
     .products-grid {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+}
+
+/* TELEFONLAR UCHUN LANDSCAPE MODE */
+@media (max-height: 500px) and (orientation: landscape) {
+    .header {
+        max-height: 100px;
     }
     
-    .nav-links {
-        width: 100%;
-        justify-content: space-around;
+    .nav {
+        height: 36px;
     }
     
-    .search-box {
-        width: 100%;
-        margin: 15px 0;
+    .hero-banner {
+        padding: 20px 0;
+        margin-bottom: 20px;
+    }
+    
+    .hero-content h2 {
+        font-size: 20px;
+        margin-bottom: 8px;
+    }
+    
+    .hero-content p {
+        font-size: 14px;
+        margin-bottom: 12px;
     }
 }
 
-/* ===== UTILITY CLASSES ===== */
-.text-center {
-    text-align: center;
+/* TOUCH DEVICES UCHUN */
+@media (hover: none) and (pointer: coarse) {
+    .product-card:hover {
+        transform: none;
+    }
+    
+    .category-card:hover {
+        transform: none;
+    }
+    
+    .contact-card:hover {
+        transform: none;
+    }
+    
+    .img-nav {
+        opacity: 0.7 !important; /* Touch qurilmalarda har doim ko'rinishi */
+    }
 }
 
-.mb-20 {
-    margin-bottom: 20px;
-}
-
-.mb-30 {
-    margin-bottom: 30px;
-}
-
-.mb-40 {
-    margin-bottom: 40px;
-}
-
-/* === STICKY HEADER === */
-header {
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  background-color: white;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-  padding: 15px 20px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.header-top {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
-}
-
-/* Navigation menu */
-nav {
-  display: flex;
-  gap: 20px;
-  margin-top: 10px;
-}
-
-nav a {
-  text-decoration: none;
-  color: #333;
-  font-weight: 500;
-}
-
-nav a:hover {
-  color: #007bff;
+/* HIGH DPI EKRANLAR UCHUN */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    .logo-text h1 {
+        font-weight: 800;
+    }
+    
+    .nav-links a {
+        font-weight: 700;
+    }
 }
