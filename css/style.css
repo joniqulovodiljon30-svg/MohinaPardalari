@@ -22,7 +22,7 @@ body {
     background-color: #fafafa;
     color: var(--text-color);
     line-height: 1.6;
-    overflow-x: hidden;
+    overflow-x: visible;
     width: 100%;
     min-height: 100vh;
 }
@@ -40,7 +40,7 @@ body {
     color: white;
     position: sticky;
     top: 0;
-    z-index: 1000;
+    z-index: 10000;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
     width: 100%;
 }
