@@ -767,3 +767,20 @@
         font-weight: 700;
     }
 }
+
+/* Mobile hidden class */
+@media (max-width: 480px) {
+    .mobile-hidden {
+        display: none !important;
+    }
+    
+    .nav-text {
+        display: inline;
+    }
+}
+
+@media (max-width: 360px) {
+    .nav-text {
+        display: none;
+    }
+}
